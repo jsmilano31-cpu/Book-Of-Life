@@ -13,7 +13,9 @@ python -m http.server 4173 --bind 127.0.0.1 --directory dist
 
 Open `http://127.0.0.1:4173`. Serve over HTTP; opening `index.html` directly as a file will not load JavaScript modules correctly.
 
-`npm run dev` runs the same server. `npm run check` validates syntax, referenced assets, the chapter/page structure, and the hosting manifest.
+`npm run dev`, `npm start`, and `npm run preview` run the same local server.
+
+`npm run build` validates the production-ready files already in `dist/`; this buildless site does not require a compilation step. `npm run check` runs the same checks for JavaScript syntax, referenced assets, the chapter/page structure, and the hosting manifest.
 
 ## Experience
 

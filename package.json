@@ -6,6 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "python -m http.server 4173 --bind 127.0.0.1 --directory dist",
+    "start": "npm run dev",
+    "preview": "npm run dev",
+    "build": "node tools/check.mjs",
     "check": "node tools/check.mjs"
   }
 }
