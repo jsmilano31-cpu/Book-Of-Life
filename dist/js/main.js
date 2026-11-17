@@ -18,15 +18,6 @@ function animationTo(target,options){if(window.gsap)return gsap.to(target,option
 
 function buildDecorations(){
   const ns='http://www.w3.org/2000/svg';
-  ['left','right'].forEach((side)=>{
-    const group=$('.gate-bars-'+side);
-    for(let i=0;i<12;i++){
-      const x=side==='left'?306+i*33:725+i*33;
-      const y=side==='left'?360-Math.sin(i/11*Math.PI)*63:305+Math.pow(i/11,2)*65;
-      const path=document.createElementNS(ns,'path');
-      path.setAttribute('d',`M${x} 897V${y}m-6 10 6-19 6 19`);path.setAttribute('stroke-width','3');group.append(path);
-    }
-  });
   const candles=$('#gate-candles');
   [5,8,11,14,18,22,78,82,86,89,92,95].forEach((left,i)=>{
     const candle=document.createElement('i');candle.className='gate-candle';
@@ -81,8 +72,8 @@ function initScroll(){
   introTimeline=gsap.timeline({defaults:{ease:'none'},paused:true});
   introTimeline.to({}, {duration:5},0);
   if(!state.reduced){
-    introTimeline.to('.gate-left',{rotationY:-79,svgOrigin:'286 600',duration:1.0,ease:'power1.inOut'},.12);
-    introTimeline.to('.gate-right',{rotationY:79,svgOrigin:'1114 600',duration:1.0,ease:'power1.inOut'},.12);
+    introTimeline.to('.gate-left',{rotationY:-82,transformOrigin:'0% 50%',duration:1.0,ease:'power1.inOut'},.12);
+    introTimeline.to('.gate-right',{rotationY:82,transformOrigin:'100% 50%',duration:1.0,ease:'power1.inOut'},.12);
     introTimeline.to('.hero-copy',{yPercent:-12,scale:.96,duration:.85},.12);
     introTimeline.to('.cemetery-background',{scale:1.22,duration:1.1},0);
   }

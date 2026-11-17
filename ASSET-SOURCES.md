@@ -1,6 +1,6 @@
 # Image sources and preparation
 
-Prepared 17 November 2026. Existing film imagery was downloaded from public source pages. No new illustrations were generated. Originals remain in `../references/film-image-shortlist/`. Optimized copies are in `dist/assets/images/`.
+Film images prepared 17 November 2026; entrance gate updated 18 November 2026. Existing film imagery was downloaded from public source pages. The gate is a sourced image with transparency prepared through the built-in image editing tool. Film originals remain in `../references/film-image-shortlist/`; gate originals are in `../references/gate-candidates/`. Optimized copies are in `dist/assets/images/`.
 
 ## Rights status
 
@@ -10,6 +10,7 @@ No open reuse license or project-specific permission has been verified. These ar
 
 | Filename | Source dimensions | Web dimensions | Size | Source |
 | --- | --- | --- | --- | --- |
+| `cemetery-gate-image.webp` | 920 × 745 | 1394 × 1128 | 679 KB | [Clipart Library, personal-use listing](https://clipart-library.com/clipart/cemetery-cliparts-22.htm); background-extracted derivative, see [gate notes](GATE-ASSET.md) |
 | `remembered-world-still.webp` | 3000 × 1276 | 2400 × 1021 | 445 KB | [Source](https://www.sidefx.com/community/the-book-of-life/) |
 | `remembered-world-concept.webp` | 2116 × 1200 | 1600 × 907 | 281 KB | [Source](https://characterdesignreferences.com/art-of-animation-1/art-of-the-book-of-life) |
 | `cemetery-gate-concept.webp` | 2432 × 1774 | 1200 × 875 | 123 KB | [Source](https://www.theartofjlw.com/book-of-life) |

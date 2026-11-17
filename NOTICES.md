@@ -15,6 +15,8 @@ Film imagery and production art belong to their respective rights holders. No op
 
 The concept-art sheets remain research references and are not presented as final rendered scene illustrations. Embedded source credits are preserved in the reference originals.
 
+The entrance gate uses [Clipart Library's Gothic Cemetery Gate image](https://clipart-library.com/clipart/cemetery-cliparts-22.htm), listed by the publisher for personal use and school projects. Its baked checkerboard was removed using the built-in image editing tool, and the prepared derivative is layered in CSS. It is not official film gate artwork. See `GATE-ASSET.md` for the source and full preparation prompt.
+
 ## Runtime software
 
 - **Turn.js third release**, Copyright 2012 Emmanuel Garcia. Upstream: https://github.com/blasten/turn.js. Its noncommercial BSD-style license is included at `dist/assets/vendor/TURN-LICENSE.txt`, and the original notice is retained in `turn.js`. This project is intended for noncommercial academic use.
@@ -24,6 +26,6 @@ The concept-art sheets remain research references and are not presented as final
 
 ## Original website material
 
-The website's narrative captions, discovery text, SVG gate, decorative controls, CSS book artifact, procedural Canvas effects, six-second atmospheric video, and synthesized ambient audio were produced for this implementation. The ambient audio is not the film soundtrack. Design and code credit can be assigned to the real project team in `dist/assets/project-info.json`.
+The website's narrative captions, discovery text, decorative controls, CSS book artifact, procedural Canvas effects, six-second atmospheric video, and synthesized ambient audio were produced for this implementation. The entrance gate's underlying artwork is sourced as credited above. The ambient audio is not the film soundtrack. Design and code credit can be assigned to the real project team in `dist/assets/project-info.json`.
 
 The brief and approved seven-spread outline supplied by the project owner guided the experience.

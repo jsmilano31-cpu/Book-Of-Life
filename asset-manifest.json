@@ -167,5 +167,19 @@
     ],
     "bytes": 190310,
     "source": "https://www.sensacine.com/peliculas/pelicula-203878/fotos/"
+  },
+  {
+    "filename": "cemetery-gate-image.webp",
+    "original": [
+      920,
+      745
+    ],
+    "size": [
+      1394,
+      1128
+    ],
+    "bytes": 695054,
+    "source": "https://clipart-library.com/clipart/cemetery-cliparts-22.htm",
+    "preparation": "Existing sourced gate image, background-extracted with built-in image tool; transparent derivative. Personal-use listing; see GATE-ASSET.md."
   }
 ]

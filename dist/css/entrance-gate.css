@@ -1,0 +1,70 @@
+/* Entrance-only image layers. The same source aligns exactly while the gate is shut.
+   Cropping happens in CSS; no scenery or baked checkerboard moves with a leaf. */
+.image-gate {
+  position: absolute;
+  bottom: -2.8%;
+  left: 50%;
+  width: clamp(920px, calc((100svh - 30px) * 1.244), 1450px);
+  aspect-ratio: 1394 / 1128;
+  transform: translateX(-50%);
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  pointer-events: none;
+  opacity: .94;
+}
+.image-gate img {
+  position: absolute;
+  top: 0;
+  display: block;
+  max-width: none;
+  height: 100%;
+  user-select: none;
+  filter: brightness(.68) saturate(.75) sepia(.12);
+}
+.image-gate .gate-post {
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+.gate-post-left {
+  clip-path: polygon(0 0, 19% 0, 19% 24%, 17.5% 29%, 17.5% 70%, 21% 76%, 21% 100%, 0 100%);
+}
+.gate-post-right {
+  clip-path: polygon(81% 0, 100% 0, 100% 100%, 79% 100%, 79% 76%, 82.5% 70%, 82.5% 29%, 81% 24%);
+}
+.image-gate .gate-leaf {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 32.5%;
+  overflow: hidden;
+  transform-box: border-box;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+  z-index: 2;
+}
+.image-gate .gate-left {
+  left: 17.5%;
+  transform-origin: 0% 50%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10.77% 100%, 10.77% 76%, 0 70%);
+}
+.image-gate .gate-right {
+  left: 50%;
+  transform-origin: 100% 50%;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 89.23% 76%, 89.23% 100%, 0 100%);
+}
+.image-gate .gate-leaf img { width: 307.69231%; }
+.image-gate .gate-left img { left: -53.84615%; }
+.image-gate .gate-right img { left: -153.84615%; }
+@media (max-width: 760px) {
+  .image-gate {
+    width: max(680px, calc(100svh * 1.05));
+    bottom: -2%;
+    perspective: 1100px;
+  }
+  .image-gate img { filter: brightness(.61) saturate(.75) sepia(.12); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .image-gate .gate-leaf { will-change: auto; }
+}

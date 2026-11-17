@@ -32,7 +32,11 @@ with sync_playwright() as p:
         page.wait_for_timeout(1400)
         require(page.locator('#hero-title').is_visible(),'Hero title unavailable')
         require(page.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),'Horizontal overflow in intro')
-        require(page.locator('#atmosphere-video').evaluate('(v)=>v.error===null && v.readyState>=2'),'Video failed to load')
+        if reduced:
+            require(page.locator('#atmosphere-video').evaluate('(v)=>v.paused && getComputedStyle(v).display==="none"'),'Reduced-motion video should remain disabled')
+        else:
+            page.wait_for_function('document.querySelector("#atmosphere-video").readyState>=2',timeout=5000)
+            require(page.locator('#atmosphere-video').evaluate('(v)=>v.error===null'),'Video failed to load')
         page.screenshot(path=str(OUT/f'{name}-opening.png'))
         length=page.locator('#intro-runway').evaluate('(el)=>el.offsetHeight-innerHeight')
         for i,progress in enumerate([.25,.45,.65,.91],1):

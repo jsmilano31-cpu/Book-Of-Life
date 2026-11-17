@@ -47,6 +47,8 @@ dist/
     content.js    # Seven chapter texts, page templates, discoveries
     effects.js    # Canvas fog, petals, dust, finale burst
     audio.js      # Original ambience and contextual effects
+  css/
+    entrance-gate.css  # Scoped image-gate layers and responsive framing
   assets/
     images/       # Optimized film-image candidates
     video/        # Original procedural atmospheric loop and poster
@@ -64,7 +66,7 @@ tools/
 - Buildless semantic HTML, CSS, and JavaScript modules.
 - GSAP / ScrollTrigger 3.14.2 for the cinematic opening and ending.
 - Turn.js third release from the upstream `blasten/turn.js` repository, with jQuery 3.7.1. The fourth release was not silently substituted or assumed licensed.
-- SVG gate and traced route, Canvas 2D atmosphere, and HTML5 muted looping video.
+- Image-based layered entrance gate, SVG traced route, Canvas 2D atmosphere, and HTML5 muted looping video.
 - Locally hosted Cormorant Garamond and Manrope.
 - No external runtime API calls, accounts, analytics, or backend database.
 
@@ -88,7 +90,7 @@ The downloaded film imagery is attributed and optimized, but a reuse license or 
 
 A verified childhood-trio still was not available from the reviewed accessible sources. The prologue introduces their childhood in original text, then shows a clearly captioned later-life image. It does not misidentify the museum schoolchildren or the adult characters as the childhood trio.
 
-The opening gate and magical book are original SVG/CSS constructions informed by the supplied production references. Film stills remain flattened images; the site uses pans, crops, lighting, and Canvas overlays rather than claiming independently animated film characters.
+The opening gate now uses a sourced textured image prepared with transparency, split into fixed posts and moving leaves through CSS clipping. Its scroll timing and the surrounding interface are preserved. See [GATE-ASSET.md](GATE-ASSET.md) for provenance, preparation method, and the exact editing prompt. The magical book remains a CSS construction. Film stills remain flattened images; the site uses pans, crops, lighting, and Canvas overlays rather than claiming independently animated film characters.
 
 The project is an interpretive illustrated guide, not an official film companion. The Marigold Bridge is explicitly presented as a symbolic chapter. Narrative captions and discovery text are original to the website.
 
