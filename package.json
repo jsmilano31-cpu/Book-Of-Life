@@ -1,0 +1,11 @@
+{
+  "name": "book-of-life-beyond-the-pages",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A cinematic academic storybook experience",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 4173 --bind 127.0.0.1 --directory dist",
+    "check": "node tools/check.mjs"
+  }
+}
