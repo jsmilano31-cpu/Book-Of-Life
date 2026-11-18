@@ -8,14 +8,14 @@ No application dependencies need installation. All runtime libraries, fonts, ima
 
 ```powershell
 cd "C:\Users\Windows 11\Desktop\BOL\beyond-the-pages"
-python -m http.server 4173 --bind 127.0.0.1 --directory dist
+npm start
 ```
 
 Open `http://127.0.0.1:4173`. Serve over HTTP; opening `index.html` directly as a file will not load JavaScript modules correctly.
 
-`npm run dev`, `npm start`, and `npm run preview` run the same local server.
+`npm run dev`, `npm start`, and `npm run preview` run the same local server. It serves the project’s `dist/` folder with caching disabled so older JavaScript cannot be mixed with an updated page. Reload the page after making changes.
 
-`npm run build` validates the production-ready files already in `dist/`; this buildless site does not require a compilation step. `npm run check` runs the same checks for JavaScript syntax, referenced assets, the chapter/page structure, and the hosting manifest.
+`npm run build` refreshes the entry script's content-based URL and validates the production-ready files in `dist/`; this buildless site does not require a compilation step. The versioned URL prevents an older cached entry script from being used with updated HTML after a deployment. `npm run check` validates JavaScript syntax, referenced assets, the chapter/page structure, and the hosting manifest without changing files.
 
 ## Experience
 

@@ -5,10 +5,10 @@
   "description": "A cinematic academic storybook experience",
   "type": "module",
   "scripts": {
-    "dev": "python -m http.server 4173 --bind 127.0.0.1 --directory dist",
+    "dev": "python tools/serve.py",
     "start": "npm run dev",
     "preview": "npm run dev",
-    "build": "node tools/check.mjs",
+    "build": "node tools/build.mjs",
     "check": "node tools/check.mjs"
   }
 }
