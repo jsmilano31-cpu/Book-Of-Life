@@ -1,11 +1,17 @@
 import {createHash} from 'node:crypto';
-import {readFile,writeFile} from 'node:fs/promises';
+import {readFile,readdir,writeFile} from 'node:fs/promises';
 import {join,resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
 
 const root=resolve(import.meta.dirname,'..');
-const entry=await readFile(join(root,'dist','js','main.js'));
-const version=createHash('sha256').update(entry).digest('hex').slice(0,12);
+const moduleRoot=join(root,'dist','js');
+const modules=(await readdir(moduleRoot,{recursive:true})).filter(file=>file.endsWith('.js')).sort();
+const hash=createHash('sha256');
+for(const file of modules){
+  hash.update(file.replaceAll('\\','/')).update('\0');
+  hash.update(await readFile(join(moduleRoot,file))).update('\0');
+}
+const version=hash.digest('hex').slice(0,12);
 const indexPath=join(root,'dist','index.html');
 const html=await readFile(indexPath,'utf8');
 const pattern=/src="js\/main\.js(?:\?v=[^"]*)?"/g;

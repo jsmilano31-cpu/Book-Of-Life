@@ -1,4 +1,4 @@
-export class EffectsController {
+export class AtmosphereView {
   constructor(reduced=false) {
     this.canvas=document.querySelector('#atmosphere');this.ctx=this.canvas.getContext('2d');
     this.reduced=reduced;this.paused=false;this.mode='intro';this.particles=[];this.last=0;this.raf=0;

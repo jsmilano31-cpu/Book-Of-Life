@@ -42,11 +42,10 @@ dist/
   index.html
   styles.css
   js/
-    main.js       # Story states, GSAP timeline, transitions, dialogs, credits
-    book.js       # Turn.js adapter, responsive size, navigation, fallback
-    content.js    # Seven chapter texts, page templates, discoveries
-    effects.js    # Canvas fog, petals, dust, finale burst
-    audio.js      # Original ambience and contextual effects
+    main.js       # Application entry point
+    models/       # Story content, page numbering, journey state, and credits storage
+    views/        # Book templates, DOM updates, GSAP timelines, and Canvas effects
+    controllers/  # Journey flow, reader input and Turn.js, and audio playback
   css/
     entrance-gate.css  # Scoped image-gate layers and responsive framing
   assets/

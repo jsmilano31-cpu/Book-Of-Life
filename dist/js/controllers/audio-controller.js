@@ -2,7 +2,7 @@
 export class AudioController {
   constructor() {
     this.context = null; this.playing = false; this.muted = false; this.volume = .35;
-    this.scene = 'intro'; this.timer = null; this.note = 0; this.oscillators = [];
+    this.scene = 'intro'; this.timer = null; this.note = 0;
     this.toggle = document.querySelector('#audio-play');
     this.muteButton = document.querySelector('#audio-mute');
     this.toggle.addEventListener('click', () => this.playing ? this.pause() : this.play());
@@ -28,7 +28,6 @@ export class AudioController {
       const oscillator=this.context.createOscillator(); const gain=this.context.createGain();
       oscillator.type='sine'; oscillator.frequency.value=hz; oscillator.detune.value=(i-1)*4;
       gain.gain.value=.17/(i+1); oscillator.connect(gain); gain.connect(this.pad); oscillator.start();
-      this.oscillators.push(oscillator);
     });
   }
   async play() {
