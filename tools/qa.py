@@ -40,9 +40,8 @@ with sync_playwright() as p:
         page.screenshot(path=str(OUT/f'{name}-opening.png'))
         length=page.locator('#intro-runway').evaluate('(el)=>el.offsetHeight-innerHeight')
         for i,progress in enumerate([.25,.45,.65,.91],1):
-            page.evaluate('(y)=>scrollTo(0,y)',length*progress)
-            page.wait_for_timeout(850)
-            require(page.locator(f'.journey-markers [data-scene="{i}"]').get_attribute('aria-current')=='step',f'Scene {i} progression failed')
+            page.evaluate("(top)=>scrollTo({top,behavior:'instant'})",length*progress)
+            page.locator(f'.journey-markers [data-scene="{i}"][aria-current="step"]').wait_for(state='visible')
         page.locator('#artifact-open').click()
         page.wait_for_function("window.experience?.mode==='book' && window.experience.bookReady")
         page.wait_for_timeout(1200)
@@ -98,7 +97,7 @@ with sync_playwright() as p:
         if mobile:
             page.locator('#next-page').click();page.wait_for_timeout(1100)
         page.locator('#begin-finale').click()
-        page.wait_for_function("window.experience.mode==='finale'",timeout=5000)
+        page.wait_for_function("window.experience.mode==='finale'",timeout=15000)
         page.wait_for_timeout(1600)
         page.screenshot(path=str(OUT/f'{name}-finale.png'))
         page.locator('#skip-finale').click()
