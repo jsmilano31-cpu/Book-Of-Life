@@ -43,7 +43,7 @@ with sync_playwright() as p:
             page.evaluate('(y)=>scrollTo(0,y)',length*progress)
             page.wait_for_timeout(850)
             require(page.locator(f'.journey-markers [data-scene="{i}"]').get_attribute('aria-current')=='step',f'Scene {i} progression failed')
-        page.locator('#open-book').click()
+        page.locator('#artifact-open').click()
         page.wait_for_function("window.experience?.mode==='book' && window.experience.bookReady")
         page.wait_for_timeout(1200)
         require(page.evaluate("window.experience.bookEngine==='turnjs'"),'Real Turn.js engine did not initialize')

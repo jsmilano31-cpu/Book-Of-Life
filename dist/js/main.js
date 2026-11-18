@@ -229,7 +229,7 @@ function bindInteractions(){
     }
   });
   document.addEventListener('keydown',event=>{if(event.key==='Escape')closeSound();});
-  $('#open-book').addEventListener('click',()=>openBook());$('#artifact-open').addEventListener('click',()=>openBook());
+  $('#artifact-open').addEventListener('click',()=>openBook());
   $('#skip-story').addEventListener('click',()=>openBook());
   $('.skip-link').addEventListener('click',event=>{event.preventDefault();openBook(2,true);});
   $('#scroll-next').addEventListener('click',()=>scrollToScene(Math.min(4,state.scene+1)));
