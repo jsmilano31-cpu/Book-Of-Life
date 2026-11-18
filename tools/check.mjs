@@ -1,5 +1,5 @@
 import { readFile, readdir, stat } from 'node:fs/promises';
-import { join, dirname, resolve } from 'node:path';
+import { join, dirname, resolve, sep } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
 const root = resolve(import.meta.dirname, '..');
@@ -22,7 +22,7 @@ for (const file of all.filter((p) => p.endsWith('.js'))) {
 }
 for (const file of all.filter(
   (p) =>
-    /\.(html|css|js)$/.test(p) && !p.includes(`${join('assets', 'vendor')}`),
+    /\.(html|css|js)$/.test(p) && !p.startsWith(join(dist, 'vendor') + sep),
 )) {
   const text = await readFile(file, 'utf8');
   const candidates = [
@@ -46,14 +46,14 @@ for (const file of all.filter(
     }
   }
 }
-const { chapters } = await import('../dist/js/models/story.js');
-const { createPages } = await import('../dist/js/views/book-pages.js');
+const { chapters } = await import('../dist/model/story.js');
+const { createPages } = await import('../dist/view/book-pages.js');
 if (chapters.length !== 7) failures.push('Expected seven chapters');
 if ((createPages().match(/data-page="/g) || []).length !== 16)
   failures.push('Expected fourteen interior pages plus two covers');
 for (const chapter of chapters) {
   try {
-    await stat(join(dist, 'assets', 'images', chapter.image));
+    await stat(join(dist, 'media', 'images', chapter.image));
   } catch {
     failures.push(`Missing chapter image ${chapter.image}`);
   }

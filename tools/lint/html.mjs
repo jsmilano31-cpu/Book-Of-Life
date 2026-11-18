@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { HtmlValidate, formatterFactory } from 'html-validate';
-import { createPages } from '../../dist/js/views/book-pages.js';
+import { createPages } from '../../dist/view/book-pages.js';
 
 const validator = new HtmlValidate({
   elements: ['html5'],

@@ -1,6 +1,6 @@
 # Image sources and preparation
 
-Film images prepared 17 November 2026; entrance gate updated 18 November 2026. Existing film imagery was downloaded from public source pages. The gate is a sourced image with transparency prepared through the built-in image editing tool. Film originals remain in `../references/film-image-shortlist/`; gate originals are in `../references/gate-candidates/`. Optimized copies are in `dist/assets/images/`.
+Film images prepared 17 November 2026; entrance gate updated 18 November 2026. Existing film imagery was downloaded from public source pages. The gate is a sourced image with transparency prepared through the built-in image editing tool. Film originals remain in `../references/film-image-shortlist/`; gate originals are in `../references/gate-candidates/`. Optimized copies are in `dist/media/images/`.
 
 ## Rights status
 

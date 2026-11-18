@@ -1,11 +1,11 @@
-import { createPages } from '../views/book-pages.js';
-import { measureBook, sizeBookStage, renderBook } from '../views/book-view.js';
+import { createPages } from '../view/book-pages.js';
+import { measureBook, sizeBookStage, renderBook } from '../view/book-view.js';
 import {
   FIRST_PAGE,
   LAST_PAGE,
   chapterForPage,
   nextBookPage,
-} from '../models/book.js';
+} from '../model/book.js';
 
 /** Turn.js remains isolated here; cinematic navigation never drives its page state. */
 export class BookController {

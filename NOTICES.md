@@ -19,13 +19,13 @@ The entrance gate uses [Clipart Library's Gothic Cemetery Gate image](https://cl
 
 ## Runtime software
 
-- **Turn.js third release**, Copyright 2012 Emmanuel Garcia. Upstream: https://github.com/blasten/turn.js. Its noncommercial BSD-style license is included at `dist/assets/vendor/TURN-LICENSE.txt`, and the original notice is retained in `turn.js`. This project is intended for noncommercial academic use.
-- **jQuery 3.7.1**, MIT license. Included at `dist/assets/vendor/JQUERY-LICENSE.txt`.
+- **Turn.js third release**, Copyright 2012 Emmanuel Garcia. Upstream: https://github.com/blasten/turn.js. Its noncommercial BSD-style license is included at `dist/vendor/TURN-LICENSE.txt`, and the original notice is retained in `turn.js`. This project is intended for noncommercial academic use.
+- **jQuery 3.7.1**, MIT license. Included at `dist/vendor/JQUERY-LICENSE.txt`.
 - **GSAP / ScrollTrigger 3.14.2**, Webflow / GreenSock. Original bundled notices are retained. Standard No Charge License: https://gsap.com/community/standard-license/
-- **Cormorant Garamond** and **Manrope**, SIL Open Font License. Included at `dist/assets/fonts/Cormorant-Garamond-OFL.txt` and `dist/assets/fonts/Manrope-OFL.txt`. Font files were downloaded from Google Fonts.
+- **Cormorant Garamond** and **Manrope**, SIL Open Font License. Included at `dist/media/fonts/Cormorant-Garamond-OFL.txt` and `dist/media/fonts/Manrope-OFL.txt`. Font files were downloaded from Google Fonts.
 
 ## Original website material
 
-The website's narrative captions, discovery text, decorative controls, CSS book artifact, procedural Canvas effects, six-second atmospheric video, and synthesized ambient audio were produced for this implementation. The entrance gate's underlying artwork is sourced as credited above. The ambient audio is not the film soundtrack. Design and code credit can be assigned to the real project team in `dist/assets/project-info.json`.
+The website's narrative captions, discovery text, decorative controls, CSS book artifact, procedural Canvas effects, six-second atmospheric video, and synthesized ambient audio were produced for this implementation. The entrance gate's underlying artwork is sourced as credited above. The ambient audio is not the film soundtrack. Design and code credit can be assigned to the real project team in `dist/model/project-info.json`.
 
 The brief and approved seven-spread outline supplied by the project owner guided the experience.

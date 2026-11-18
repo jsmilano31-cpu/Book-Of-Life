@@ -5,18 +5,18 @@
   "description": "A cinematic academic storybook experience",
   "type": "module",
   "scripts": {
-    "dev": "python tools/serve.py",
+    "dev": "node tools/serve.mjs",
     "start": "npm run dev",
     "preview": "npm run dev",
     "build": "node tools/build.mjs",
     "check": "node tools/check.mjs",
-    "lint": "npm run lint:js && npm run lint:css && npm run lint:html && npm run lint:python && npm run lint:format",
-    "lint:js": "eslint --config tools/lint/eslint.mjs \"dist/js/**/*.js\" \"tools/**/*.mjs\"",
-    "lint:css": "biome lint --config-path=tools/lint/biome.json --error-on-warnings dist/css dist/assets/fonts/fonts.css",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html && npm run lint:format",
+    "lint:js": "eslint --config tools/lint/eslint.mjs \"dist/{model,view,control}/**/*.js\" \"tools/**/*.mjs\"",
+    "lint:css": "biome lint --config-path=tools/lint/biome.json --error-on-warnings dist/view/styles dist/media/fonts/fonts.css",
     "lint:html": "node tools/lint/html.mjs",
-    "lint:python": "python -m ruff check --no-cache --select E4,E7,E9,F,I tools && python -m ruff format --check --no-cache tools",
-    "lint:format": "prettier --config tools/lint/prettier.json --check \"dist/index.html\" \"dist/css/*.css\" \"dist/js/**/*.js\" \"tools/**/*.mjs\" \"tools/lint/*.json\" \"dist/assets/project-info.json\" \".openai/hosting.json\" \"asset-manifest.json\" \"package.json\"",
-    "test": "python tools/test.py"
+    "lint:format": "prettier --config tools/lint/prettier.json --check \"dist/index.html\" \"dist/view/styles/*.css\" \"dist/{model,view,control}/**/*.js\" \"tools/**/*.mjs\" \"tools/lint/*.json\" \"dist/model/project-info.json\" \".openai/hosting.json\" \"asset-manifest.json\" \"package.json\"",
+    "test": "node tools/test.mjs",
+    "media:generate": "node tools/media/generate-atmosphere.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.8",
@@ -24,6 +24,7 @@
     "eslint": "10.15.0",
     "globals": "17.14.0",
     "html-validate": "11.21.1",
+    "playwright": "1.65.1",
     "prettier": "3.10.1"
   }
 }

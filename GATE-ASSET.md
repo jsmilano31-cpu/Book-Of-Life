@@ -4,7 +4,7 @@ Updated 18 November 2026, replacing the programmatically drawn SVG gate only.
 
 ## Asset and source
 
-- Production asset: `dist/assets/images/cemetery-gate-image.webp` (1394 × 1128, transparent alpha).
+- Production asset: `dist/media/images/cemetery-gate-image.webp` (1394 × 1128, transparent alpha).
 - Source: [Clipart Library, Gothic Cemetery Gate](https://clipart-library.com/clipart/cemetery-cliparts-22.htm).
 - Source PNG: https://clipart-library.com/2023/png-transparent-gray-metal-gate-cemetery-halloween-graveyard-gate-happy-halloween-image-file-formats-fence.png
 - Publisher describes the asset as personal-use imagery suitable for school projects. This is not an official Book of Life gate still. Broader reuse rights have not been independently verified.
@@ -26,6 +26,6 @@ Four aligned image instances use one cached asset: two clipped fixed-post layers
 
 The two leaf containers rotate around their outside hinges using the existing scroll timeline. Reduced-motion mode keeps the gate still. The title, header, buttons, candle decorations, particle canvas, book, page interactions, audio, finale, and chapter navigation retain their existing implementation.
 
-Gate-specific CSS lives in `dist/css/entrance-gate.css`, scoped to `.image-gate`. The obsolete gate-bar construction code was removed from `buildDecorations`; the flower and candle construction remains.
+Gate-specific CSS lives in `dist/view/styles/entrance-gate.css`, scoped to `.image-gate`. The obsolete gate-bar construction code was removed from `buildDecorations`; the flower and candle construction remains.
 
-`tools/qa/gate.py` checks image loading, scroll opening, stationary posts, return-to-closed behavior, reduced motion, responsive layout, restart, and continued book access when the decorative image fails.
+`tools/qa/gate.mjs` checks image loading, scroll opening, stationary posts, return-to-closed behavior, reduced motion, responsive layout, restart, and continued book access when the decorative image fails.

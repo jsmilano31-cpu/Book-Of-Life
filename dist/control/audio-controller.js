@@ -61,6 +61,7 @@ export class AudioController {
       this.syncUI();
       this.melody();
       clearInterval(this.timer);
+      // Schedule the next phrase while the opted-in Web Audio score is running.
       this.timer = setInterval(() => this.melody(), 3400);
       document.querySelector('#announcement').textContent =
         'Original ambient sound is playing.';

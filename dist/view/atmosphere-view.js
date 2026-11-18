@@ -21,6 +21,7 @@ export class AtmosphereView {
   resize() {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
+    // Cap the backing-store size on high-DPI screens to limit canvas work.
     const ratio = Math.min(devicePixelRatio || 1, 1.7);
     this.canvas.width = Math.round(this.width * ratio);
     this.canvas.height = Math.round(this.height * ratio);
@@ -69,6 +70,7 @@ export class AtmosphereView {
   }
   frame(time) {
     if (this.paused || this.reduced || document.hidden) return;
+    // Clamp the time step after a slow frame to keep the particles from jumping.
     const dt = this.last ? Math.min((time - this.last) / 16.667, 2) : 1;
     this.last = time;
     const ctx = this.ctx;

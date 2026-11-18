@@ -4,7 +4,7 @@ import globals from 'globals';
 export default [
   javascript.configs.recommended,
   {
-    files: ['dist/js/**/*.js'],
+    files: ['dist/{model,view,control}/**/*.js'],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -18,6 +18,10 @@ export default [
     languageOptions: {
       globals: globals.node,
     },
+  },
+  {
+    files: ['tools/qa/**/*.mjs'],
+    languageOptions: { globals: globals.browser },
   },
   {
     rules: {

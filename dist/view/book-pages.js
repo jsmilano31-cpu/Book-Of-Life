@@ -1,4 +1,4 @@
-import { chapters } from '../models/story.js';
+import { chapters } from '../model/story.js';
 
 const flower = '<svg aria-hidden="true"><use href="#icon-flower"/></svg>';
 const pageNumber = (n) =>
@@ -29,7 +29,7 @@ export function createPages() {
   );
   chapters.forEach((c, index) => {
     const leftNum = 2 + index * 2;
-    const picture = `assets/images/${c.image}`;
+    const picture = `media/images/${c.image}`;
     let hotspots = '';
     if (index === 0)
       hotspots = hotspot(

@@ -1,4 +1,4 @@
-import { sceneLabels } from '../models/experience.js';
+import { sceneLabels } from '../model/experience.js';
 
 export const $ = (selector) => document.querySelector(selector);
 export const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -22,9 +22,16 @@ export function renderMode(mode) {
   }
 }
 
-export function syncVideo({ mode, reduced, atmospherePaused }) {
+export function syncVideo({ mode, scene, reduced, atmospherePaused }) {
   const video = $('#atmosphere-video');
-  if (mode === 'intro' && !reduced && !atmospherePaused)
+  // Decode frames only while the cemetery and browser tab are visible.
+  if (
+    mode === 'intro' &&
+    scene === 0 &&
+    !reduced &&
+    !atmospherePaused &&
+    !document.hidden
+  )
     video.play().catch(() => {});
   else video.pause();
 }
@@ -62,6 +69,7 @@ export function renderDiscovery({ title, text }) {
 }
 
 export function renderBridge(lit) {
+  // The active class traces the SVG path through the CSS dash-offset transition.
   $('#light-bridge').setAttribute('aria-pressed', String(lit));
   $('#bridge-interaction').classList.toggle('active', lit);
   $('#bridge-status').textContent = lit

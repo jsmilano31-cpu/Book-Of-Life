@@ -1,10 +1,10 @@
-import { chapters } from '../models/story.js';
+import { chapters } from '../model/story.js';
 import {
   FIRST_PAGE,
   LAST_PAGE,
   chapterForPage,
   firstPageOfChapter,
-} from '../models/book.js';
+} from '../model/book.js';
 
 export function measureBook() {
   const single = window.innerWidth <= 760;

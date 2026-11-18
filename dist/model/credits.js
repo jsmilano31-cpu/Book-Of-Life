@@ -8,7 +8,7 @@ export class Credits {
   async load() {
     let configured = {};
     try {
-      const response = await fetch('assets/project-info.json');
+      const response = await fetch('model/project-info.json');
       if (response.ok) configured = await response.json();
     } catch {
       // Credits can still be edited if the project defaults cannot load.

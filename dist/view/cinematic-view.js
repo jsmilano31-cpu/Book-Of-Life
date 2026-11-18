@@ -1,5 +1,5 @@
 import { $, $$ } from './experience-view.js';
-import { sceneLabels } from '../models/experience.js';
+import { sceneLabels } from '../model/experience.js';
 
 export function introScrollLength() {
   return Math.max(1, $('#intro-runway').offsetHeight - window.innerHeight);

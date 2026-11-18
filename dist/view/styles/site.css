@@ -334,7 +334,7 @@ body[data-mode='credits'] {
 .cemetery-background {
   background:
     linear-gradient(#11272acc, #0e1d29aa 35%, #08182077),
-    url('../assets/images/story-still-4.webp') center/cover;
+    url('../../media/images/story-still-4.webp') center/cover;
   filter: saturate(0.42) brightness(0.6);
   transform: scale(1.1);
 }
@@ -741,7 +741,7 @@ p {
 .awakening-background {
   background:
     linear-gradient(#101b26b3, #0a1722ed),
-    url('../assets/images/remembered-world-still.webp') center/cover;
+    url('../../media/images/remembered-world-still.webp') center/cover;
   filter: blur(5px);
   transform: scale(1.06);
 }
@@ -925,7 +925,7 @@ p {
   inset: -25px;
   background:
     linear-gradient(#111e29ea, #112127ed),
-    url('../assets/images/remembered-world-still.webp') center/cover;
+    url('../../media/images/remembered-world-still.webp') center/cover;
   filter: blur(12px);
   z-index: -2;
 }

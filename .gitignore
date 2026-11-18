@@ -1,7 +1,6 @@
 node_modules/
 .env
 .env.*
-__pycache__/
 qa-output/
 *.tar.gz
 *.zip

@@ -4,7 +4,7 @@ A complete browser-based academic fan experience: a scroll-driven cemetery-to-af
 
 ## Run locally
 
-No application dependencies need installation. All runtime libraries, fonts, images, and the atmospheric video are included in `dist/`.
+Run the preview with Node.js 24. The site has no package installation step for normal preview or hosting. All runtime libraries, fonts, images, and the atmospheric video are included in `dist/`.
 
 ```powershell
 cd "C:\Users\Windows 11\Desktop\BOL\beyond-the-pages"
@@ -31,7 +31,7 @@ Sound starts only when the visitor selects **Play ambience** in the sound contro
 
 ## Real academic credits
 
-Set `dist/assets/project-info.json` to include the team, course, section, instructor, and institution for every visitor. Empty fields are omitted; no invented names or academic details appear.
+Set `dist/model/project-info.json` to include the team, course, section, instructor, and institution for every visitor. Empty fields are omitted; no invented names or academic details appear.
 
 The ending also has a **Personalize project credits** form. These entries are stored only in that visitor's browser and override the JSON file for that browser. They do not update the hosted source or other visitors' credits.
 
@@ -39,26 +39,18 @@ The ending also has a **Personalize project credits** form. These entries are st
 
 ```text
 dist/
-  index.html
-  js/
-    main.js       # Application entry point
-    models/       # Story content, page numbering, journey state, and credits storage
-    views/        # Book templates, DOM updates, GSAP timelines, and Canvas effects
-    controllers/  # Journey flow, reader input and Turn.js, and audio playback
-  css/
-    site.css           # Layout, reader, credits, and responsive design
-    entrance-gate.css  # Image-gate layers and responsive framing
-  assets/
-    images/       # Optimized film-image candidates
-    video/        # Original procedural atmospheric loop and poster
-    fonts/        # Locally hosted fonts and OFL licenses
-    vendor/       # GSAP, ScrollTrigger, jQuery, Turn.js and notices
-    project-info.json
+  index.html     # Semantic structure for the journey, reader, and credits
+  media/         # WebP images, fog video and poster, fonts, and favicon
+  view/          # DOM rendering, SVG, Canvas, GSAP, and styles/
+  control/       # Entry point, scene flow, Turn.js, and Web Audio
+  model/         # Story chapters, page rules, state, and project-info.json
+  vendor/        # Bundled third-party libraries and licenses
 tools/
-  build.mjs, check.mjs, serve.py
-  lint/            # Validation and formatting rules for authored code
-  qa/              # Browser suites, run through test.py
-  media/           # Atmospheric video generator
+  serve.mjs      # Node.js local preview
+  build.mjs      # Versions the browser entry and runs check.mjs
+  test.mjs       # Runs the Playwright suites in qa/
+  lint/          # Source validation and formatting configuration
+  media/         # Optional generator for the original atmosphere video
 ```
 
 ## Technology and dependency choices
@@ -70,7 +62,17 @@ tools/
 - Locally hosted Cormorant Garamond and Manrope.
 - No external runtime API calls, accounts, analytics, or backend database.
 
-The small MP4 is an original six-second loop of procedural fog and motes. Recreate it with `python tools/media/generate-atmosphere.py` after installing Pillow and imageio-ffmpeg if needed. Its use avoids introducing unrelated stock video or unlicensed movie footage.
+The small MP4 is an original six-second loop of procedural fog and motes. To regenerate the video and poster, run `npm run media:generate` from this folder with FFmpeg on your PATH or with `FFMPEG` set to the executable path. The committed files are ready to play.
+
+## Professor's grading criteria
+
+| Criterion | Where to see it |
+| --- | --- |
+| Multimedia integration (30) | Play ambience from the sound panel. The opening uses a muted MP4 and WebP poster alongside optimized WebP story images. |
+| Animation mastery (25) | Try the button hover and the bridge trace for CSS transitions. The cemetery shadow, candle flicker, and floating book use CSS keyframes. |
+| Advanced graphics (25) | In chapter 2, select **Follow the marigolds** to trace the SVG path. Canvas renders drifting petals and fog and adds a burst during the ending. |
+| Code quality and performance (10) | HTML provides semantic sections and labeled controls. ES modules separate data, rendering, and interactions. Scene images load lazily, fog video pauses outside the cemetery, and Canvas caps pixel density. |
+| Theme and creativity (10) | Animated shadows, a dark cemetery, candles, and fog set the Halloween mood. The story and the Land of the Remembered retain their Día de Muertos imagery. |
 
 ## Reliability and accessibility
 
@@ -96,17 +98,16 @@ The project is an interpretive illustrated guide, not an official film companion
 
 ## Validation
 
-Install the development tools from this folder with Node.js 24, Python, and Chrome available.
+Install the development tools from this folder with Node.js 24 and Chrome available.
 
 ```powershell
 npm ci
-python -m pip install -r requirements-dev.txt
 npm run lint
 npm run build
 npm test
 ```
 
-Lint checks authored JavaScript, HTML (including generated book pages), CSS, Python, and source formatting. The browser suites start a temporary local preview and cover scrolling, the gate, Turn.js, audio controls, book interactions, the ending, credits persistence, and dependency fallbacks. They use headless Chrome with desktop, mobile emulation, and reduced-motion settings. Reports and screenshots go to the temporary folder printed by the test runner.
+Lint checks authored JavaScript, HTML (including generated book pages), CSS, and source formatting. The browser suites start a temporary local preview and cover scrolling, the gate, Turn.js, audio and video playback, the SVG and Canvas, the ending, credits persistence, and dependency fallbacks. They use headless Chrome with desktop, mobile emulation, and reduced-motion settings. Reports and screenshots go to the temporary folder printed by the test runner.
 
 ## Hosting
 

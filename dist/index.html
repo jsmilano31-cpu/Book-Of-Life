@@ -15,32 +15,32 @@
     />
     <meta
       property="og:image"
-      content="https://book-of-life-beyond-pages-20261117.claywasp32.chatgpt.site/assets/images/remembered-world-still.webp"
+      content="https://book-of-life-beyond-pages-20261117.claywasp32.chatgpt.site/media/images/remembered-world-still.webp"
     />
     <meta property="og:type" content="website" />
     <title>The Book of Life · Beyond the Pages</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="media/favicon.svg" type="image/svg+xml" />
     <link
       rel="preload"
-      href="assets/fonts/font-3.ttf"
+      href="media/fonts/font-3.ttf"
       as="font"
       type="font/ttf"
       crossorigin
     />
-    <link rel="preload" href="assets/images/story-still-4.webp" as="image" />
+    <link rel="preload" href="media/images/story-still-4.webp" as="image" />
     <link
       rel="preload"
-      href="assets/images/cemetery-gate-image.webp"
+      href="media/images/cemetery-gate-image.webp"
       as="image"
     />
-    <link rel="stylesheet" href="assets/fonts/fonts.css" />
-    <link rel="stylesheet" href="css/site.css" />
-    <link rel="stylesheet" href="css/entrance-gate.css" />
-    <script defer src="assets/vendor/jquery.min.js"></script>
-    <script defer src="assets/vendor/gsap.min.js"></script>
-    <script defer src="assets/vendor/ScrollTrigger.min.js"></script>
-    <script defer src="assets/vendor/turn.js"></script>
-    <script type="module" src="js/main.js?v=f1779df90b49"></script>
+    <link rel="stylesheet" href="media/fonts/fonts.css" />
+    <link rel="stylesheet" href="view/styles/site.css" />
+    <link rel="stylesheet" href="view/styles/entrance-gate.css" />
+    <script defer src="vendor/jquery.min.js"></script>
+    <script defer src="vendor/gsap.min.js"></script>
+    <script defer src="vendor/ScrollTrigger.min.js"></script>
+    <script defer src="vendor/turn.js"></script>
+    <script type="module" src="control/main.js?v=7d4bb0525c74"></script>
   </head>
   <body data-mode="intro">
     <a class="skip-link" href="#skip-story">Skip to the interactive book</a>
@@ -158,14 +158,14 @@
             <video
               class="atmosphere-video"
               id="atmosphere-video"
-              autoplay
+              preload="none"
               muted
               loop
               playsinline
-              poster="assets/video/atmosphere-poster.webp"
+              poster="media/video/atmosphere-poster.webp"
               aria-hidden="true"
             >
-              <source src="assets/video/atmosphere.mp4" type="video/mp4" />
+              <source src="media/video/atmosphere.mp4" type="video/mp4" />
             </video>
             <div class="moon-halo"></div>
             <div class="night-wash"></div>
@@ -173,7 +173,7 @@
               <div id="cemetery-gate" class="image-gate">
                 <div class="gate-leaf gate-left">
                   <img
-                    src="assets/images/cemetery-gate-image.webp"
+                    src="media/images/cemetery-gate-image.webp"
                     width="1394"
                     height="1128"
                     alt=""
@@ -183,7 +183,7 @@
                 </div>
                 <div class="gate-leaf gate-right">
                   <img
-                    src="assets/images/cemetery-gate-image.webp"
+                    src="media/images/cemetery-gate-image.webp"
                     width="1394"
                     height="1128"
                     alt=""
@@ -193,7 +193,7 @@
                 </div>
                 <img
                   class="gate-post gate-post-left"
-                  src="assets/images/cemetery-gate-image.webp"
+                  src="media/images/cemetery-gate-image.webp"
                   width="1394"
                   height="1128"
                   alt=""
@@ -202,7 +202,7 @@
                 />
                 <img
                   class="gate-post gate-post-right"
-                  src="assets/images/cemetery-gate-image.webp"
+                  src="media/images/cemetery-gate-image.webp"
                   width="1394"
                   height="1128"
                   alt=""
@@ -243,7 +243,7 @@
             <img
               class="scene-image"
               id="friends-image"
-              src="assets/images/celebration.webp"
+              src="media/images/celebration.webp"
               alt="Manolo, María, and Joaquín reunited in celebration"
               loading="lazy"
             />
@@ -275,7 +275,7 @@
           >
             <img
               class="scene-image"
-              src="assets/images/maria-candlelight.webp"
+              src="media/images/maria-candlelight.webp"
               alt="María surrounded by warm candlelight"
               loading="lazy"
             />
@@ -299,7 +299,7 @@
           >
             <img
               class="scene-image world-panorama"
-              src="assets/images/remembered-world-still.webp"
+              src="media/images/remembered-world-still.webp"
               alt="The glowing towers, bridges, and skull-shaped balloons of the Land of the Remembered"
               loading="lazy"
             />
@@ -448,7 +448,7 @@
       >
         <img
           class="finale-world"
-          src="assets/images/remembered-world-still.webp"
+          src="media/images/remembered-world-still.webp"
           alt="The Land of the Remembered expands beyond the book"
         />
         <div class="finale-vignette"></div>
@@ -671,7 +671,7 @@
         </button>
         <p class="credit-fine">
           For a shared version, these details can also be set in
-          assets/project-info.json.
+          model/project-info.json.
         </p>
       </form>
     </dialog>

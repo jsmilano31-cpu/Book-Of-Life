@@ -1,11 +1,11 @@
-import { chapters, discoveries } from '../models/story.js';
+import { chapters, discoveries } from '../model/story.js';
 import {
   createExperience,
   sceneAtProgress,
   sceneLabels,
-} from '../models/experience.js';
-import { FIRST_PAGE, firstPageOfChapter } from '../models/book.js';
-import { Credits } from '../models/credits.js';
+} from '../model/experience.js';
+import { FIRST_PAGE, firstPageOfChapter } from '../model/book.js';
+import { Credits } from '../model/credits.js';
 import {
   $,
   $$,
@@ -23,7 +23,7 @@ import {
   renderScene,
   renderSoundPanel,
   syncVideo,
-} from '../views/experience-view.js';
+} from '../view/experience-view.js';
 import {
   animateBookEntrance,
   animateBookExit,
@@ -36,8 +36,8 @@ import {
   renderFallbackScene,
   resetJourneyView,
   showStaticFinale,
-} from '../views/cinematic-view.js';
-import { AtmosphereView } from '../views/atmosphere-view.js';
+} from '../view/cinematic-view.js';
+import { AtmosphereView } from '../view/atmosphere-view.js';
 import { AudioController } from './audio-controller.js';
 import { BookController } from './book-controller.js';
 
@@ -67,6 +67,7 @@ export function startExperience() {
     if (state.scene !== scene) {
       state.scene = scene;
       renderScene(scene);
+      syncVideo(state);
       if (fallback) renderFallbackScene(scene);
     }
     renderProgress(progress);
@@ -411,7 +412,7 @@ export function startExperience() {
   bindInteractions();
   setupIntro();
   credits.load().then(() => renderCredits(credits.values));
-  if (state.reduced) syncVideo(state);
+  document.addEventListener('visibilitychange', () => syncVideo(state));
   motion.addEventListener('change', () => {
     state.reduced = motion.matches;
     effects.setReduced(state.reduced);
