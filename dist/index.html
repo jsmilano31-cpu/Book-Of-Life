@@ -1,127 +1,698 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#111b20">
-  <meta name="description" content="Enter a story that lives beyond its pages. A cinematic, interactive Book of Life journey into the Land of the Remembered.">
-  <meta property="og:title" content="The Book of Life · Beyond the Pages">
-  <meta property="og:description" content="A cinematic journey through love, memory, and a world within the pages.">
-  <meta property="og:image" content="https://book-of-life-beyond-pages-20261117.claywasp32.chatgpt.site/assets/images/remembered-world-still.webp">
-  <meta property="og:type" content="website">
-  <title>The Book of Life · Beyond the Pages</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/font-3.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="assets/images/story-still-4.webp" as="image">
-  <link rel="preload" href="assets/images/cemetery-gate-image.webp" as="image">
-  <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="css/entrance-gate.css">
-  <script defer src="assets/vendor/jquery.min.js"></script>
-  <script defer src="assets/vendor/gsap.min.js"></script>
-  <script defer src="assets/vendor/ScrollTrigger.min.js"></script>
-  <script defer src="assets/vendor/turn.js"></script>
-  <script type="module" src="js/main.js?v=fb56637f9763"></script>
-</head>
-<body data-mode="intro">
-  <a class="skip-link" href="#skip-story">Skip to the interactive book</a>
-  <svg class="svg-defs" aria-hidden="true"><defs>
-    <symbol id="icon-book" viewBox="0 0 32 32"><path d="M16 7C11 3 5 4 2 5v21c5-2 10-1 14 2 4-3 9-4 14-2V5c-3-1-9-2-14 2Zm0 0v21M6 9c2-1 5 0 7 1M6 14c2-1 5 0 7 1m6-5c2-1 5-2 7-1m-7 6c2-1 5-2 7-1"/></symbol>
-    <symbol id="icon-sound" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Zm13-1c2 2 2 6 0 8m3-11c4 4 4 10 0 14"/></symbol>
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
-    <symbol id="icon-flower" viewBox="0 0 40 40"><g fill="currentColor" stroke="none"><ellipse cx="20" cy="11" rx="5" ry="10"/><ellipse cx="20" cy="29" rx="5" ry="10"/><ellipse cx="11" cy="20" rx="10" ry="5"/><ellipse cx="29" cy="20" rx="10" ry="5"/><ellipse cx="13.6" cy="13.6" rx="5" ry="9" transform="rotate(-45 13.6 13.6)"/><ellipse cx="26.4" cy="26.4" rx="5" ry="9" transform="rotate(-45 26.4 26.4)"/><ellipse cx="26.4" cy="13.6" rx="5" ry="9" transform="rotate(45 26.4 13.6)"/><ellipse cx="13.6" cy="26.4" rx="5" ry="9" transform="rotate(45 13.6 26.4)"/><circle cx="20" cy="20" r="6" fill="#5d3e25"/></g></symbol>
-  </defs></svg>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#111b20" />
+    <meta
+      name="description"
+      content="Enter a story that lives beyond its pages. A cinematic, interactive Book of Life journey into the Land of the Remembered."
+    />
+    <meta property="og:title" content="The Book of Life · Beyond the Pages" />
+    <meta
+      property="og:description"
+      content="A cinematic journey through love, memory, and a world within the pages."
+    />
+    <meta
+      property="og:image"
+      content="https://book-of-life-beyond-pages-20261117.claywasp32.chatgpt.site/assets/images/remembered-world-still.webp"
+    />
+    <meta property="og:type" content="website" />
+    <title>The Book of Life · Beyond the Pages</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/fonts/font-3.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="preload" href="assets/images/story-still-4.webp" as="image" />
+    <link
+      rel="preload"
+      href="assets/images/cemetery-gate-image.webp"
+      as="image"
+    />
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/entrance-gate.css" />
+    <script defer src="assets/vendor/jquery.min.js"></script>
+    <script defer src="assets/vendor/gsap.min.js"></script>
+    <script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+    <script defer src="assets/vendor/turn.js"></script>
+    <script type="module" src="js/main.js?v=f1779df90b49"></script>
+  </head>
+  <body data-mode="intro">
+    <a class="skip-link" href="#skip-story">Skip to the interactive book</a>
+    <svg class="svg-defs" aria-hidden="true">
+      <defs>
+        <symbol id="icon-book" viewBox="0 0 32 32">
+          <path
+            d="M16 7C11 3 5 4 2 5v21c5-2 10-1 14 2 4-3 9-4 14-2V5c-3-1-9-2-14 2Zm0 0v21M6 9c2-1 5 0 7 1M6 14c2-1 5 0 7 1m6-5c2-1 5-2 7-1m-7 6c2-1 5-2 7-1"
+          />
+        </symbol>
+        <symbol id="icon-sound" viewBox="0 0 24 24">
+          <path d="M4 9v6h4l5 4V5L8 9H4Zm13-1c2 2 2 6 0 8m3-11c4 4 4 10 0 14" />
+        </symbol>
+        <symbol id="icon-arrow" viewBox="0 0 24 24">
+          <path d="M4 12h16m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="icon-flower" viewBox="0 0 40 40">
+          <g fill="currentColor" stroke="none">
+            <ellipse cx="20" cy="11" rx="5" ry="10" />
+            <ellipse cx="20" cy="29" rx="5" ry="10" />
+            <ellipse cx="11" cy="20" rx="10" ry="5" />
+            <ellipse cx="29" cy="20" rx="10" ry="5" />
+            <ellipse
+              cx="13.6"
+              cy="13.6"
+              rx="5"
+              ry="9"
+              transform="rotate(-45 13.6 13.6)"
+            />
+            <ellipse
+              cx="26.4"
+              cy="26.4"
+              rx="5"
+              ry="9"
+              transform="rotate(-45 26.4 26.4)"
+            />
+            <ellipse
+              cx="26.4"
+              cy="13.6"
+              rx="5"
+              ry="9"
+              transform="rotate(45 26.4 13.6)"
+            />
+            <ellipse
+              cx="13.6"
+              cy="26.4"
+              rx="5"
+              ry="9"
+              transform="rotate(45 13.6 26.4)"
+            />
+            <circle cx="20" cy="20" r="6" fill="#5d3e25" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
 
-  <header class="site-header">
-    <button class="brand" id="home-button" aria-label="The Book of Life, return to beginning"><svg><use href="#icon-book"/></svg><span>THE BOOK OF LIFE<small>BEYOND THE PAGES</small></span></button>
-    <nav class="header-actions" aria-label="Experience controls">
-      <button class="sound-toggle" id="sound-toggle" aria-expanded="false" aria-controls="sound-panel"><svg><use href="#icon-sound"/></svg><span id="sound-label">Sound off</span><i class="sound-dot"></i></button>
-      <button class="text-button chapters-toggle" id="chapters-toggle" aria-expanded="false" aria-controls="chapter-drawer"><span class="menu-icon"><i></i><i></i></span><span>Chapters</span></button>
-    </nav>
-  </header>
+    <header class="site-header">
+      <button
+        class="brand"
+        id="home-button"
+        aria-label="The Book of Life, return to beginning"
+      >
+        <svg><use href="#icon-book" /></svg
+        ><span>THE BOOK OF LIFE<small>BEYOND THE PAGES</small></span>
+      </button>
+      <nav class="header-actions" aria-label="Experience controls">
+        <button
+          class="sound-toggle"
+          id="sound-toggle"
+          aria-expanded="false"
+          aria-controls="sound-panel"
+        >
+          <svg><use href="#icon-sound" /></svg
+          ><span id="sound-label">Sound off</span><i class="sound-dot"></i>
+        </button>
+        <button
+          class="text-button chapters-toggle"
+          id="chapters-toggle"
+          aria-expanded="false"
+          aria-controls="chapter-drawer"
+        >
+          <span class="menu-icon"><i></i><i></i></span><span>Chapters</span>
+        </button>
+      </nav>
+    </header>
 
-  <section id="sound-panel" class="sound-panel glass-panel" aria-label="Sound controls" hidden>
-    <p class="eyebrow">THE SOUND OF THE STORY</p><p>Original ambient music & gentle effects.</p>
-    <div class="sound-buttons"><button id="audio-play" class="small-button">Play ambience</button><button id="audio-mute" class="small-button" disabled>Mute</button></div>
-    <label class="volume-label" for="audio-volume">Volume <input id="audio-volume" type="range" min="0" max="100" value="35"></label>
-    <button id="motion-toggle" class="text-button">Pause atmosphere</button>
-  </section>
-
-  <main>
-    <section id="intro-runway" aria-label="The cinematic journey">
-      <div id="intro-stage">
-        <article class="cinematic-scene scene-cemetery" id="scene-cemetery" aria-labelledby="hero-title">
-          <div class="scene-image cemetery-background"></div>
-          <video class="atmosphere-video" id="atmosphere-video" autoplay muted loop playsinline poster="assets/video/atmosphere-poster.webp" aria-hidden="true"><source src="assets/video/atmosphere.mp4" type="video/mp4"></video>
-          <div class="moon-halo"></div><div class="night-wash"></div>
-          <div class="cemetery-architecture" aria-hidden="true">
-            <div id="cemetery-gate" class="image-gate">
-              <div class="gate-leaf gate-left"><img src="assets/images/cemetery-gate-image.webp" width="1394" height="1128" alt="" draggable="false" decoding="async"></div>
-              <div class="gate-leaf gate-right"><img src="assets/images/cemetery-gate-image.webp" width="1394" height="1128" alt="" draggable="false" decoding="async"></div>
-              <img class="gate-post gate-post-left" src="assets/images/cemetery-gate-image.webp" width="1394" height="1128" alt="" draggable="false" decoding="async">
-              <img class="gate-post gate-post-right" src="assets/images/cemetery-gate-image.webp" width="1394" height="1128" alt="" draggable="false" decoding="async">
-            </div>
-            <div class="gate-candles" id="gate-candles"></div><div class="flower-bank flower-bank-left"></div><div class="flower-bank flower-bank-right"></div>
-          </div>
-          <div class="hero-copy">
-            <p class="eyebrow intro-eyebrow"><span></span> EVERY LIFE LEAVES A STORY <span></span></p>
-            <h1 id="hero-title">The Book<br><em>of Life</em><span class="title-star">✦</span></h1>
-            <div class="hero-rule"><i></i><svg><use href="#icon-flower"/></svg><i></i></div>
-            <p class="hero-subtitle">A journey beyond the pages.</p>
-            <p class="hero-description">Through love, memory, and a little magic,<br>some stories live forever.</p>
-          </div>
-          <div class="hero-side-note">SAN ÁNGEL, MÉXICO <span>THE WORLD OF THE LIVING</span></div>
-        </article>
-
-        <article class="cinematic-scene scene-friends" id="scene-friends" aria-hidden="true">
-          <img class="scene-image" id="friends-image" src="assets/images/celebration.webp" alt="Manolo, María, and Joaquín reunited in celebration" loading="lazy">
-          <div class="scene-gradient"></div>
-          <div class="scene-copy"><p class="eyebrow">I · BEFORE THE ADVENTURE</p><h2>Three friends.<br><em>One unfolding story.</em></h2><p>In San Ángel, young Manolo, Joaquín, and María share a childhood of friendship and possibility. As they grow, their paths are shaped by love, courage, and the question of who they want to become.</p><div class="character-names"><span>Manolo<small>THE MUSICIAN AT HEART</small></span><span>María<small>THE FREE SPIRIT</small></span><span>Joaquín<small>THE BRAVE FRIEND</small></span></div></div>
-          <p class="scene-image-note" id="friends-caption">The friends, reunited later in their journey.</p>
-        </article>
-
-        <article class="cinematic-scene scene-turning" id="scene-turning" aria-hidden="true">
-          <img class="scene-image" src="assets/images/maria-candlelight.webp" alt="María surrounded by warm candlelight" loading="lazy"><div class="scene-gradient"></div>
-          <div class="scene-copy centered-copy"><p class="eyebrow">II · THE CROSSING</p><h2>Love leads him<br><em>beyond the living.</em></h2><p>Believing María has died, Manolo follows a promise into the afterlife. His own death becomes the beginning of a journey through memory—and back toward hope.</p><span class="ornament-divider">✧ ─── ✦ ─── ✧</span></div>
-        </article>
-
-        <article class="cinematic-scene scene-world" id="scene-world" aria-hidden="true">
-          <img class="scene-image world-panorama" src="assets/images/remembered-world-still.webp" alt="The glowing towers, bridges, and skull-shaped balloons of the Land of the Remembered" loading="lazy"><div class="scene-gradient"></div>
-          <div class="scene-copy"><p class="eyebrow">III · A WORLD THAT REMEMBERS</p><h2>Gone from sight.<br><em>Never from the story.</em></h2><p>Beyond the living, a city glows with color, music, and the presence of those still held in memory. Welcome to the Land of the Remembered.</p></div>
-        </article>
-
-        <article class="cinematic-scene scene-awakening" id="scene-awakening" aria-hidden="true">
-          <div class="scene-image awakening-background"></div><div class="scene-gradient"></div>
-          <div class="awakening-layout"><div class="awakening-copy"><p class="eyebrow">IV · THE STORY IS WAITING</p><h2>Some worlds<br>are found<br><em>between pages.</em></h2><p>A book stirs in the golden light.<br>Its next chapter is yours to discover.</p><span class="micro-copy">7 CHAPTERS · AN INTERACTIVE STORYBOOK</span></div><button class="artifact-button" id="artifact-open" aria-label="Open the magical Book of Life"><span class="artifact-light"></span><span class="artifact-book"><span class="artifact-spine"></span><span class="artifact-cover"><span class="cover-corner top-left"></span><span class="cover-corner top-right"></span><span class="cover-corner bottom-left"></span><span class="cover-corner bottom-right"></span><svg class="cover-flower"><use href="#icon-flower"/></svg><span class="cover-small">EVERY SOUL HAS A STORY</span><span class="cover-title">The Book<br><em>of Life</em></span><span class="cover-line"></span><span class="cover-ornament">✧</span><span class="cover-subtitle">BEYOND THE PAGES</span><span class="cover-year">✦</span></span></span></button></div>
-        </article>
-
-        <div class="intro-bottom"><button class="scroll-invitation" id="scroll-next"><span class="mouse-outline"><i></i></span><span id="scroll-label">SCROLL TO BEGIN THE JOURNEY</span><span class="scroll-arrow">↓</span></button><button class="text-button" id="skip-story">Enter the book <span>↗</span></button></div>
-        <nav class="journey-markers" aria-label="Story scenes"><button class="active" data-scene="0" aria-label="Scene 1: The cemetery" aria-current="step"><span>01</span><i></i></button><button data-scene="1" aria-label="Scene 2: Three friends"><span>02</span><i></i></button><button data-scene="2" aria-label="Scene 3: The crossing"><span>03</span><i></i></button><button data-scene="3" aria-label="Scene 4: The remembered world"><span>04</span><i></i></button><button data-scene="4" aria-label="Scene 5: The magical book"><span>05</span><i></i></button></nav>
-        <div class="intro-progress"><span></span></div>
+    <section
+      id="sound-panel"
+      class="sound-panel glass-panel"
+      aria-label="Sound controls"
+      hidden
+    >
+      <p class="eyebrow">THE SOUND OF THE STORY</p>
+      <p>Original ambient music & gentle effects.</p>
+      <div class="sound-buttons">
+        <button id="audio-play" class="small-button">Play ambience</button
+        ><button id="audio-mute" class="small-button" disabled>Mute</button>
       </div>
+      <label class="volume-label" for="audio-volume"
+        >Volume
+        <input id="audio-volume" type="range" min="0" max="100" value="35"
+      /></label>
+      <button id="motion-toggle" class="text-button">Pause atmosphere</button>
     </section>
 
-    <section id="book-section" class="book-section" aria-label="Interactive storybook" hidden>
-      <div class="reader-background"></div><div class="reader-heading"><p class="eyebrow">THE LAND OF THE REMEMBERED</p><h2>A world within the pages.</h2><p>Follow the story. Find the little wonders.</p></div>
-      <div class="book-stage" id="book-stage"><div class="book-shadow"></div><div id="storybook" aria-label="Page-turning book"></div><div class="binding-shadow" aria-hidden="true"></div></div>
-      <nav class="book-navigation" aria-label="Book navigation"><button class="round-button" id="previous-page" aria-label="Previous page"><svg><use href="#icon-arrow"/></svg></button><div class="book-position"><span class="chapter-caption" id="chapter-caption">CHAPTER 01 / 07</span><span id="page-caption">Welcome to the Afterlife</span></div><button class="round-button" id="next-page" aria-label="Next page"><svg><use href="#icon-arrow"/></svg></button></nav>
-      <div class="reader-footer"><button class="text-button" id="back-to-journey">↶ Replay the journey</button><p>DRAG A CORNER <span>·</span> USE ARROW KEYS <span>·</span> DISCOVER THE DETAILS</p><button class="text-button" id="reader-about">About the experience ↗</button></div>
-    </section>
+    <main>
+      <section id="intro-runway" aria-label="The cinematic journey">
+        <div id="intro-stage">
+          <article
+            class="cinematic-scene scene-cemetery"
+            id="scene-cemetery"
+            aria-labelledby="hero-title"
+          >
+            <div class="scene-image cemetery-background"></div>
+            <video
+              class="atmosphere-video"
+              id="atmosphere-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              poster="assets/video/atmosphere-poster.webp"
+              aria-hidden="true"
+            >
+              <source src="assets/video/atmosphere.mp4" type="video/mp4" />
+            </video>
+            <div class="moon-halo"></div>
+            <div class="night-wash"></div>
+            <div class="cemetery-architecture" aria-hidden="true">
+              <div id="cemetery-gate" class="image-gate">
+                <div class="gate-leaf gate-left">
+                  <img
+                    src="assets/images/cemetery-gate-image.webp"
+                    width="1394"
+                    height="1128"
+                    alt=""
+                    draggable="false"
+                    decoding="async"
+                  />
+                </div>
+                <div class="gate-leaf gate-right">
+                  <img
+                    src="assets/images/cemetery-gate-image.webp"
+                    width="1394"
+                    height="1128"
+                    alt=""
+                    draggable="false"
+                    decoding="async"
+                  />
+                </div>
+                <img
+                  class="gate-post gate-post-left"
+                  src="assets/images/cemetery-gate-image.webp"
+                  width="1394"
+                  height="1128"
+                  alt=""
+                  draggable="false"
+                  decoding="async"
+                />
+                <img
+                  class="gate-post gate-post-right"
+                  src="assets/images/cemetery-gate-image.webp"
+                  width="1394"
+                  height="1128"
+                  alt=""
+                  draggable="false"
+                  decoding="async"
+                />
+              </div>
+              <div class="gate-candles" id="gate-candles"></div>
+              <div class="flower-bank flower-bank-left"></div>
+              <div class="flower-bank flower-bank-right"></div>
+            </div>
+            <div class="hero-copy">
+              <p class="eyebrow intro-eyebrow">
+                <span></span> EVERY LIFE LEAVES A STORY <span></span>
+              </p>
+              <h1 id="hero-title">
+                The Book<br /><em>of Life</em><span class="title-star">✦</span>
+              </h1>
+              <div class="hero-rule">
+                <i></i><svg><use href="#icon-flower" /></svg><i></i>
+              </div>
+              <p class="hero-subtitle">A journey beyond the pages.</p>
+              <p class="hero-description">
+                Through love, memory, and a little magic,<br />some stories live
+                forever.
+              </p>
+            </div>
+            <div class="hero-side-note">
+              SAN ÁNGEL, MÉXICO <span>THE WORLD OF THE LIVING</span>
+            </div>
+          </article>
 
-    <section id="finale-section" class="finale-section" aria-label="The book becomes the world" hidden><img class="finale-world" src="assets/images/remembered-world-still.webp" alt="The Land of the Remembered expands beyond the book"><div class="finale-vignette"></div><div class="finale-copy"><p class="eyebrow">THE STORY LIVES ON</p><h2>A life remembered<br><em>is a life that never ends.</em></h2><p>Carry a little of this world with you.</p></div><button class="text-button finale-skip" id="skip-finale">Continue to credits →</button><div class="finale-light"></div></section>
+          <article
+            class="cinematic-scene scene-friends"
+            id="scene-friends"
+            aria-hidden="true"
+          >
+            <img
+              class="scene-image"
+              id="friends-image"
+              src="assets/images/celebration.webp"
+              alt="Manolo, María, and Joaquín reunited in celebration"
+              loading="lazy"
+            />
+            <div class="scene-gradient"></div>
+            <div class="scene-copy">
+              <p class="eyebrow">I · BEFORE THE ADVENTURE</p>
+              <h2>Three friends.<br /><em>One unfolding story.</em></h2>
+              <p>
+                In San Ángel, young Manolo, Joaquín, and María share a childhood
+                of friendship and possibility. As they grow, their paths are
+                shaped by love, courage, and the question of who they want to
+                become.
+              </p>
+              <div class="character-names">
+                <span>Manolo<small>THE MUSICIAN AT HEART</small></span
+                ><span>María<small>THE FREE SPIRIT</small></span
+                ><span>Joaquín<small>THE BRAVE FRIEND</small></span>
+              </div>
+            </div>
+            <p class="scene-image-note" id="friends-caption">
+              The friends, reunited later in their journey.
+            </p>
+          </article>
 
-    <section id="credits-section" class="credits-section" aria-label="Project credits" hidden><div class="credits-inner"><svg class="credits-flower"><use href="#icon-flower"/></svg><p class="eyebrow">THANK YOU FOR TURNING THE PAGES</p><h2>The Book of Life<br><em>Beyond the Pages</em></h2><p class="credits-intro">An interactive cinematic experience<br>inspired by the world of <cite>The Book of Life</cite> (2014).</p><div id="academic-credits"></div><div class="credit-group"><p class="eyebrow">DESIGN · ANIMATION · DEVELOPMENT</p><p>A story told through illustration, motion,<br>interactive pages, and original ambient sound.</p></div><div class="credit-group"><p class="eyebrow">THE WORLD THAT INSPIRED US</p><p>Film directed by Jorge R. Gutiérrez<br>Produced by Reel FX and 20th Century Fox</p><p class="credit-fine">Film imagery belongs to its respective rights holders.<br>This is an independent educational fan project.</p></div><div class="credits-actions"><button class="gold-button" id="restart">Experience it again <svg><use href="#icon-arrow"/></svg></button><button class="small-button" id="return-book">Return to the book</button></div><div class="credits-links"><button class="text-button" id="credits-sources">Sources & acknowledgements</button><button class="text-button" id="edit-credits">Personalize project credits</button></div><p class="credits-last">EVERY ENDING HOLDS ANOTHER BEGINNING. <span>✦</span></p></div></section>
-  </main>
+          <article
+            class="cinematic-scene scene-turning"
+            id="scene-turning"
+            aria-hidden="true"
+          >
+            <img
+              class="scene-image"
+              src="assets/images/maria-candlelight.webp"
+              alt="María surrounded by warm candlelight"
+              loading="lazy"
+            />
+            <div class="scene-gradient"></div>
+            <div class="scene-copy centered-copy">
+              <p class="eyebrow">II · THE CROSSING</p>
+              <h2>Love leads him<br /><em>beyond the living.</em></h2>
+              <p>
+                Believing María has died, Manolo follows a promise into the
+                afterlife. His own death becomes the beginning of a journey
+                through memory—and back toward hope.
+              </p>
+              <span class="ornament-divider">✧ ─── ✦ ─── ✧</span>
+            </div>
+          </article>
 
-  <canvas id="atmosphere" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
-  <p id="announcement" class="sr-only" aria-live="polite"></p>
-  <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
-  <aside id="chapter-drawer" class="chapter-drawer" aria-label="Chapter menu" hidden inert><div class="drawer-top"><p class="eyebrow">YOUR JOURNEY</p><button class="close-button" id="close-drawer" aria-label="Close chapter menu">×</button></div><h2>Between<br><em>the pages.</em></h2><p>Seven chapters. A world to remember.</p><ol id="chapter-list"></ol><button class="text-button" id="drawer-replay">↶ Start from the beginning</button><button class="text-button" id="about-button">About this experience ↗</button></aside>
+          <article
+            class="cinematic-scene scene-world"
+            id="scene-world"
+            aria-hidden="true"
+          >
+            <img
+              class="scene-image world-panorama"
+              src="assets/images/remembered-world-still.webp"
+              alt="The glowing towers, bridges, and skull-shaped balloons of the Land of the Remembered"
+              loading="lazy"
+            />
+            <div class="scene-gradient"></div>
+            <div class="scene-copy">
+              <p class="eyebrow">III · A WORLD THAT REMEMBERS</p>
+              <h2>Gone from sight.<br /><em>Never from the story.</em></h2>
+              <p>
+                Beyond the living, a city glows with color, music, and the
+                presence of those still held in memory. Welcome to the Land of
+                the Remembered.
+              </p>
+            </div>
+          </article>
 
-  <dialog id="detail-dialog" class="detail-dialog"><button class="close-button" data-close-dialog aria-label="Close detail">×</button><p class="eyebrow" id="detail-kicker">A LITTLE WONDER</p><svg class="detail-flower"><use href="#icon-flower"/></svg><h2 id="detail-title"></h2><div id="detail-body"></div><button class="small-button" data-close-dialog>Back to the story</button></dialog>
-  <dialog id="about-dialog" class="about-dialog"><button class="close-button" data-close-dialog aria-label="Close about">×</button><p class="eyebrow">BEHIND THE PAGES</p><h2>A world made<br><em>to be remembered.</em></h2><p>This independent academic experience celebrates storytelling, memory, and the visual world of <cite>The Book of Life</cite> (2014). It combines a scroll-led prologue, seven illustrated chapters, and a cinematic ending.</p><h3>Make yourself at home</h3><p>Scroll through the opening, then turn the book with its corners, the arrows, your keyboard, or a swipe. Glowing details invite a closer look. Sound is optional; the complete story is available in text.</p><h3>Image acknowledgements</h3><p>Film imagery © its respective rights holders, including 20th Century Fox / Reel FX. Sources are credited below; online availability does not establish a reuse license.</p><ul class="source-list"><li><a href="https://www.sidefx.com/community/the-book-of-life/" target="_blank" rel="noopener">SideFX · remembered-city panorama ↗</a></li><li><a href="https://www.sensacine.com/peliculas/pelicula-203878/fotos/" target="_blank" rel="noopener">SensaCine · character and family stills ↗</a></li><li><a href="https://www.fandango.com/the-book-of-life-163450/movie-photos-posters" target="_blank" rel="noopener">Fandango · story and candle-tree stills ↗</a></li><li><a href="https://family.20thcenturystudios.com/movies/the-book-of-life" target="_blank" rel="noopener">20th Century Studios · film reference ↗</a></li><li><a href="https://clipart-library.com/clipart/cemetery-cliparts-22.htm" target="_blank" rel="noopener">Clipart Library &middot; entrance gate image, personal-use listing &#8599;</a></li></ul><p class="credit-fine">Animation: GSAP / ScrollTrigger. Page turns: Turn.js 3 (noncommercial license), Emmanuel Garcia. Fonts: Cormorant Garamond & Manrope. Ambient sound and particle video are original procedural compositions. This experience is unaffiliated with the film's producers.</p><button class="small-button" data-close-dialog>Return to the experience</button></dialog>
-  <dialog id="credits-dialog" class="about-dialog"><button class="close-button" data-close-dialog aria-label="Close credits editor">×</button><p class="eyebrow">MAKE THE CREDITS YOURS</p><h2>The people<br><em>behind the story.</em></h2><p>Add the real project information. It stays in this browser and appears in the ending credits.</p><form id="credits-form"><label>Created by<textarea name="team" rows="3" placeholder="Team members and roles"></textarea></label><label>Course<input name="course" placeholder="Course name"></label><label>Section<input name="section" placeholder="Section"></label><label>Instructor<input name="instructor" placeholder="Instructor name"></label><label>Institution<input name="institution" placeholder="Institution name"></label><button class="gold-button" type="submit">Save project credits <svg><use href="#icon-arrow"/></svg></button><p class="credit-fine">For a shared version, these details can also be set in assets/project-info.json.</p></form></dialog>
-  <noscript><div class="noscript-story"><h1>The Book of Life: Beyond the Pages</h1><p>In San Ángel, Manolo, Joaquín, and María grow up as friends. Manolo's journey takes him beyond the world of the living into the Land of the Remembered, where family and memory bring the afterlife to life.</p><p>Our illustrated chapters explore the city, its bridges, its inhabitants, and the meaning of remembrance. A story can outlast a lifetime when someone carries it forward.</p><p>Enable JavaScript to experience the animated storybook. Film imagery is credited to its respective rights holders.</p></div></noscript>
-</body>
+          <article
+            class="cinematic-scene scene-awakening"
+            id="scene-awakening"
+            aria-hidden="true"
+          >
+            <div class="scene-image awakening-background"></div>
+            <div class="scene-gradient"></div>
+            <div class="awakening-layout">
+              <div class="awakening-copy">
+                <p class="eyebrow">IV · THE STORY IS WAITING</p>
+                <h2>Some worlds<br />are found<br /><em>between pages.</em></h2>
+                <p>
+                  A book stirs in the golden light.<br />Its next chapter is
+                  yours to discover.
+                </p>
+                <span class="micro-copy"
+                  >7 CHAPTERS · AN INTERACTIVE STORYBOOK</span
+                >
+              </div>
+              <button
+                class="artifact-button"
+                id="artifact-open"
+                aria-label="Open the magical Book of Life"
+              >
+                <span class="artifact-light"></span
+                ><span class="artifact-book"
+                  ><span class="artifact-spine"></span
+                  ><span class="artifact-cover"
+                    ><span class="cover-corner top-left"></span
+                    ><span class="cover-corner top-right"></span
+                    ><span class="cover-corner bottom-left"></span
+                    ><span class="cover-corner bottom-right"></span
+                    ><svg class="cover-flower"><use href="#icon-flower" /></svg
+                    ><span class="cover-small">EVERY SOUL HAS A STORY</span
+                    ><span class="cover-title"
+                      >The Book<br /><em>of Life</em></span
+                    ><span class="cover-line"></span
+                    ><span class="cover-ornament">✧</span
+                    ><span class="cover-subtitle">BEYOND THE PAGES</span
+                    ><span class="cover-year">✦</span></span
+                  ></span
+                >
+              </button>
+            </div>
+          </article>
+
+          <div class="intro-bottom">
+            <button class="scroll-invitation" id="scroll-next">
+              <span class="mouse-outline"><i></i></span
+              ><span id="scroll-label">SCROLL TO BEGIN THE JOURNEY</span
+              ><span class="scroll-arrow">↓</span></button
+            ><button class="text-button" id="skip-story">
+              Enter the book <span>↗</span>
+            </button>
+          </div>
+          <nav class="journey-markers" aria-label="Story scenes">
+            <button
+              class="active"
+              data-scene="0"
+              aria-label="Scene 1: The cemetery"
+              aria-current="step"
+            >
+              <span>01</span><i></i></button
+            ><button data-scene="1" aria-label="Scene 2: Three friends">
+              <span>02</span><i></i></button
+            ><button data-scene="2" aria-label="Scene 3: The crossing">
+              <span>03</span><i></i></button
+            ><button data-scene="3" aria-label="Scene 4: The remembered world">
+              <span>04</span><i></i></button
+            ><button data-scene="4" aria-label="Scene 5: The magical book">
+              <span>05</span><i></i>
+            </button>
+          </nav>
+          <div class="intro-progress"><span></span></div>
+        </div>
+      </section>
+
+      <section
+        id="book-section"
+        class="book-section"
+        aria-label="Interactive storybook"
+        hidden
+      >
+        <div class="reader-background"></div>
+        <div class="reader-heading">
+          <p class="eyebrow">THE LAND OF THE REMEMBERED</p>
+          <h2>A world within the pages.</h2>
+          <p>Follow the story. Find the little wonders.</p>
+        </div>
+        <div class="book-stage" id="book-stage">
+          <div class="book-shadow"></div>
+          <div id="storybook" aria-label="Page-turning book"></div>
+          <div class="binding-shadow" aria-hidden="true"></div>
+        </div>
+        <nav class="book-navigation" aria-label="Book navigation">
+          <button
+            class="round-button"
+            id="previous-page"
+            aria-label="Previous page"
+          >
+            <svg><use href="#icon-arrow" /></svg>
+          </button>
+          <div class="book-position">
+            <span class="chapter-caption" id="chapter-caption"
+              >CHAPTER 01 / 07</span
+            ><span id="page-caption">Welcome to the Afterlife</span>
+          </div>
+          <button class="round-button" id="next-page" aria-label="Next page">
+            <svg><use href="#icon-arrow" /></svg>
+          </button>
+        </nav>
+        <div class="reader-footer">
+          <button class="text-button" id="back-to-journey">
+            ↶ Replay the journey
+          </button>
+          <p>
+            DRAG A CORNER <span>·</span> USE ARROW KEYS <span>·</span> DISCOVER
+            THE DETAILS
+          </p>
+          <button class="text-button" id="reader-about">
+            About the experience ↗
+          </button>
+        </div>
+      </section>
+
+      <section
+        id="finale-section"
+        class="finale-section"
+        aria-label="The book becomes the world"
+        hidden
+      >
+        <img
+          class="finale-world"
+          src="assets/images/remembered-world-still.webp"
+          alt="The Land of the Remembered expands beyond the book"
+        />
+        <div class="finale-vignette"></div>
+        <div class="finale-copy">
+          <p class="eyebrow">THE STORY LIVES ON</p>
+          <h2>A life remembered<br /><em>is a life that never ends.</em></h2>
+          <p>Carry a little of this world with you.</p>
+        </div>
+        <button class="text-button finale-skip" id="skip-finale">
+          Continue to credits →
+        </button>
+        <div class="finale-light"></div>
+      </section>
+
+      <section
+        id="credits-section"
+        class="credits-section"
+        aria-label="Project credits"
+        hidden
+      >
+        <div class="credits-inner">
+          <svg class="credits-flower"><use href="#icon-flower" /></svg>
+          <p class="eyebrow">THANK YOU FOR TURNING THE PAGES</p>
+          <h2>The Book of Life<br /><em>Beyond the Pages</em></h2>
+          <p class="credits-intro">
+            An interactive cinematic experience<br />inspired by the world of
+            <cite>The Book of Life</cite> (2014).
+          </p>
+          <div id="academic-credits"></div>
+          <div class="credit-group">
+            <p class="eyebrow">DESIGN · ANIMATION · DEVELOPMENT</p>
+            <p>
+              A story told through illustration, motion,<br />interactive pages,
+              and original ambient sound.
+            </p>
+          </div>
+          <div class="credit-group">
+            <p class="eyebrow">THE WORLD THAT INSPIRED US</p>
+            <p>
+              Film directed by Jorge R. Gutiérrez<br />Produced by Reel FX and
+              20th Century Fox
+            </p>
+            <p class="credit-fine">
+              Film imagery belongs to its respective rights holders.<br />This
+              is an independent educational fan project.
+            </p>
+          </div>
+          <div class="credits-actions">
+            <button class="gold-button" id="restart">
+              Experience it again <svg><use href="#icon-arrow" /></svg></button
+            ><button class="small-button" id="return-book">
+              Return to the book
+            </button>
+          </div>
+          <div class="credits-links">
+            <button class="text-button" id="credits-sources">
+              Sources & acknowledgements</button
+            ><button class="text-button" id="edit-credits">
+              Personalize project credits
+            </button>
+          </div>
+          <p class="credits-last">
+            EVERY ENDING HOLDS ANOTHER BEGINNING. <span>✦</span>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <canvas id="atmosphere" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <p id="announcement" class="sr-only" aria-live="polite"></p>
+    <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+    <aside
+      id="chapter-drawer"
+      class="chapter-drawer"
+      aria-label="Chapter menu"
+      hidden
+      inert
+    >
+      <div class="drawer-top">
+        <p class="eyebrow">YOUR JOURNEY</p>
+        <button
+          class="close-button"
+          id="close-drawer"
+          aria-label="Close chapter menu"
+        >
+          ×
+        </button>
+      </div>
+      <h2>Between<br /><em>the pages.</em></h2>
+      <p>Seven chapters. A world to remember.</p>
+      <ol id="chapter-list"></ol>
+      <button class="text-button" id="drawer-replay">
+        ↶ Start from the beginning</button
+      ><button class="text-button" id="about-button">
+        About this experience ↗
+      </button>
+    </aside>
+
+    <dialog id="detail-dialog" class="detail-dialog">
+      <button class="close-button" data-close-dialog aria-label="Close detail">
+        ×
+      </button>
+      <p class="eyebrow" id="detail-kicker">A LITTLE WONDER</p>
+      <svg class="detail-flower"><use href="#icon-flower" /></svg>
+      <h2 id="detail-title"></h2>
+      <div id="detail-body"></div>
+      <button class="small-button" data-close-dialog>Back to the story</button>
+    </dialog>
+    <dialog id="about-dialog" class="about-dialog">
+      <button class="close-button" data-close-dialog aria-label="Close about">
+        ×
+      </button>
+      <p class="eyebrow">BEHIND THE PAGES</p>
+      <h2>A world made<br /><em>to be remembered.</em></h2>
+      <p>
+        This independent academic experience celebrates storytelling, memory,
+        and the visual world of <cite>The Book of Life</cite> (2014). It
+        combines a scroll-led prologue, seven illustrated chapters, and a
+        cinematic ending.
+      </p>
+      <h3>Make yourself at home</h3>
+      <p>
+        Scroll through the opening, then turn the book with its corners, the
+        arrows, your keyboard, or a swipe. Glowing details invite a closer look.
+        Sound is optional; the complete story is available in text.
+      </p>
+      <h3>Image acknowledgements</h3>
+      <p>
+        Film imagery © its respective rights holders, including 20th Century Fox
+        / Reel FX. Sources are credited below; online availability does not
+        establish a reuse license.
+      </p>
+      <ul class="source-list">
+        <li>
+          <a
+            href="https://www.sidefx.com/community/the-book-of-life/"
+            target="_blank"
+            rel="noopener"
+            >SideFX · remembered-city panorama ↗</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.sensacine.com/peliculas/pelicula-203878/fotos/"
+            target="_blank"
+            rel="noopener"
+            >SensaCine · character and family stills ↗</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.fandango.com/the-book-of-life-163450/movie-photos-posters"
+            target="_blank"
+            rel="noopener"
+            >Fandango · story and candle-tree stills ↗</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://family.20thcenturystudios.com/movies/the-book-of-life"
+            target="_blank"
+            rel="noopener"
+            >20th Century Studios · film reference ↗</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://clipart-library.com/clipart/cemetery-cliparts-22.htm"
+            target="_blank"
+            rel="noopener"
+            >Clipart Library &middot; entrance gate image, personal-use listing
+            &#8599;</a
+          >
+        </li>
+      </ul>
+      <p class="credit-fine">
+        Animation: GSAP / ScrollTrigger. Page turns: Turn.js 3 (noncommercial
+        license), Emmanuel Garcia. Fonts: Cormorant Garamond & Manrope. Ambient
+        sound and particle video are original procedural compositions. This
+        experience is unaffiliated with the film's producers.
+      </p>
+      <button class="small-button" data-close-dialog>
+        Return to the experience
+      </button>
+    </dialog>
+    <dialog id="credits-dialog" class="about-dialog">
+      <button
+        class="close-button"
+        data-close-dialog
+        aria-label="Close credits editor"
+      >
+        ×
+      </button>
+      <p class="eyebrow">MAKE THE CREDITS YOURS</p>
+      <h2>The people<br /><em>behind the story.</em></h2>
+      <p>
+        Add the real project information. It stays in this browser and appears
+        in the ending credits.
+      </p>
+      <form id="credits-form">
+        <label
+          >Created by<textarea
+            name="team"
+            rows="3"
+            placeholder="Team members and roles"
+          ></textarea></label
+        ><label>Course<input name="course" placeholder="Course name" /></label
+        ><label>Section<input name="section" placeholder="Section" /></label
+        ><label
+          >Instructor<input
+            name="instructor"
+            placeholder="Instructor name" /></label
+        ><label
+          >Institution<input
+            name="institution"
+            placeholder="Institution name" /></label
+        ><button class="gold-button" type="submit">
+          Save project credits <svg><use href="#icon-arrow" /></svg>
+        </button>
+        <p class="credit-fine">
+          For a shared version, these details can also be set in
+          assets/project-info.json.
+        </p>
+      </form>
+    </dialog>
+    <noscript
+      ><div class="noscript-story">
+        <h1>The Book of Life: Beyond the Pages</h1>
+        <p>
+          In San Ángel, Manolo, Joaquín, and María grow up as friends. Manolo's
+          journey takes him beyond the world of the living into the Land of the
+          Remembered, where family and memory bring the afterlife to life.
+        </p>
+        <p>
+          Our illustrated chapters explore the city, its bridges, its
+          inhabitants, and the meaning of remembrance. A story can outlast a
+          lifetime when someone carries it forward.
+        </p>
+        <p>
+          Enable JavaScript to experience the animated storybook. Film imagery
+          is credited to its respective rights holders.
+        </p>
+      </div></noscript
+    >
+  </body>
 </html>

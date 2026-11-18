@@ -1,4 +1,4 @@
-import {chapters} from './story.js';
+import { chapters } from './story.js';
 
 export const FIRST_PAGE = 2;
 export const LAST_PAGE = FIRST_PAGE + chapters.length * 2 - 1;
@@ -12,5 +12,7 @@ export function chapterForPage(page) {
 }
 
 export function nextBookPage(page, single, direction) {
-  return single ? page + direction : firstPageOfChapter(chapterForPage(page)) + 2 * direction;
+  return single
+    ? page + direction
+    : firstPageOfChapter(chapterForPage(page)) + 2 * direction;
 }

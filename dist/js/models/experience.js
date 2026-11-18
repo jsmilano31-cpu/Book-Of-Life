@@ -19,5 +19,8 @@ export function createExperience(reduced) {
 }
 
 export function sceneAtProgress(progress) {
-  return Math.min(sceneLabels.length - 1, Math.floor(progress * sceneLabels.length));
+  return Math.min(
+    sceneLabels.length - 1,
+    Math.floor(progress * sceneLabels.length),
+  );
 }

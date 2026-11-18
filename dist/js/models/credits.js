@@ -22,16 +22,24 @@ export class Credits {
     }
 
     if (this.edited) return;
-    this.values = Object.fromEntries(fields.map(field => [
-      field, String(saved?.[field] ?? configured?.[field] ?? '').slice(0, 2000),
-    ]));
+    this.values = Object.fromEntries(
+      fields.map((field) => [
+        field,
+        String(saved?.[field] ?? configured?.[field] ?? '').slice(0, 2000),
+      ]),
+    );
   }
 
   save(formData) {
     this.edited = true;
-    this.values = Object.fromEntries(fields.map(field => [
-      field, String(formData.get(field) ?? '').trim().slice(0, 2000),
-    ]));
+    this.values = Object.fromEntries(
+      fields.map((field) => [
+        field,
+        String(formData.get(field) ?? '')
+          .trim()
+          .slice(0, 2000),
+      ]),
+    );
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.values));
       return true;

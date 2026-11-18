@@ -28,4 +28,4 @@ The two leaf containers rotate around their outside hinges using the existing sc
 
 Gate-specific CSS lives in `dist/css/entrance-gate.css`, scoped to `.image-gate`. The obsolete gate-bar construction code was removed from `buildDecorations`; the flower and candle construction remains.
 
-`tools/gate-qa.py` checks image loading, scroll opening, stationary posts, return-to-closed behavior, reduced motion, responsive layout, restart, and continued book access when the decorative image fails.
+`tools/qa/gate.py` checks image loading, scroll opening, stationary posts, return-to-closed behavior, reduced motion, responsive layout, restart, and continued book access when the decorative image fails.

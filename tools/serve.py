@@ -1,4 +1,5 @@
 """Serve the local experience without caching mismatched HTML, scripts, or styles."""
+
 from argparse import ArgumentParser
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -17,7 +18,9 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         return super().send_head()
 
     def end_headers(self):
-        self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+        self.send_header(
+            "Cache-Control", "no-store, no-cache, must-revalidate, max-age=0"
+        )
         self.send_header("Pragma", "no-cache")
         self.send_header("Expires", "0")
         super().end_headers()
@@ -34,8 +37,11 @@ if __name__ == "__main__":
             print(f"Beyond the Pages: http://{args.host}:{args.port}/", flush=True)
             print("Development caching disabled. Press Ctrl+C to stop.", flush=True)
             try:
-                server.serve_forever(poll_interval=.25)
+                server.serve_forever(poll_interval=0.25)
             except KeyboardInterrupt:
                 pass
     except OSError as error:
-        parser.exit(1, f"Could not start the preview: {error}\nStop the existing server or choose another --port.\n")
+        parser.exit(
+            1,
+            f"Could not start the preview: {error}\nStop the existing server or choose another --port.\n",
+        )

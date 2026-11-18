@@ -1,183 +1,99 @@
 [
   {
     "filename": "remembered-world-still.webp",
-    "original": [
-      3000,
-      1276
-    ],
-    "size": [
-      2400,
-      1021
-    ],
+    "original": [3000, 1276],
+    "size": [2400, 1021],
     "bytes": 455562,
     "source": "https://www.sidefx.com/community/the-book-of-life/"
   },
   {
     "filename": "remembered-world-concept.webp",
-    "original": [
-      2116,
-      1200
-    ],
-    "size": [
-      1600,
-      907
-    ],
+    "original": [2116, 1200],
+    "size": [1600, 907],
     "bytes": 288160,
     "source": "https://characterdesignreferences.com/art-of-animation-1/art-of-the-book-of-life"
   },
   {
     "filename": "cemetery-gate-concept.webp",
-    "original": [
-      2432,
-      1774
-    ],
-    "size": [
-      1200,
-      875
-    ],
+    "original": [2432, 1774],
+    "size": [1200, 875],
     "bytes": 125978,
     "source": "https://www.theartofjlw.com/book-of-life"
   },
   {
     "filename": "official-character-banner.webp",
-    "original": [
-      1536,
-      662
-    ],
-    "size": [
-      1536,
-      662
-    ],
+    "original": [1536, 662],
+    "size": [1536, 662],
     "bytes": 245764,
     "source": "https://family.20thcenturystudios.com/movies/the-book-of-life"
   },
   {
     "filename": "story-still-7.webp",
-    "original": [
-      820,
-      346
-    ],
-    "size": [
-      820,
-      346
-    ],
+    "original": [820, 346],
+    "size": [820, 346],
     "bytes": 39436,
     "source": "https://www.fandango.com/the-book-of-life-163450/movie-photos-posters"
   },
   {
     "filename": "story-still-4.webp",
-    "original": [
-      820,
-      347
-    ],
-    "size": [
-      820,
-      347
-    ],
+    "original": [820, 347],
+    "size": [820, 347],
     "bytes": 43436,
     "source": "https://www.fandango.com/the-book-of-life-163450/movie-photos-posters"
   },
   {
     "filename": "story-still-10.webp",
-    "original": [
-      820,
-      655
-    ],
-    "size": [
-      820,
-      655
-    ],
+    "original": [820, 655],
+    "size": [820, 655],
     "bytes": 150038,
     "source": "https://www.fandango.com/the-book-of-life-163450/movie-photos-posters"
   },
   {
     "filename": "candle-maker-book.webp",
-    "original": [
-      1600,
-      680
-    ],
-    "size": [
-      1600,
-      680
-    ],
+    "original": [1600, 680],
+    "size": [1600, 680],
     "bytes": 149852,
     "source": "https://www.sensacine.com/peliculas/pelicula-203878/fotos/detalle/?cmediafile=21135565"
   },
   {
     "filename": "maria-candlelight.webp",
-    "original": [
-      1600,
-      680
-    ],
-    "size": [
-      1600,
-      680
-    ],
+    "original": [1600, 680],
+    "size": [1600, 680],
     "bytes": 47718,
     "source": "https://www.sensacine.com/peliculas/pelicula-203878/fotos/"
   },
   {
     "filename": "celebration.webp",
-    "original": [
-      1600,
-      680
-    ],
-    "size": [
-      1600,
-      680
-    ],
+    "original": [1600, 680],
+    "size": [1600, 680],
     "bytes": 165862,
     "source": "https://www.sensacine.com/peliculas/pelicula-203878/fotos/"
   },
   {
     "filename": "remembered-family-gathering.webp",
-    "original": [
-      1600,
-      680
-    ],
-    "size": [
-      1600,
-      680
-    ],
+    "original": [1600, 680],
+    "size": [1600, 680],
     "bytes": 206480,
     "source": "https://www.sensacine.com/peliculas/pelicula-203878/fotos/"
   },
   {
     "filename": "manolo-ancestors.webp",
-    "original": [
-      1600,
-      680
-    ],
-    "size": [
-      1600,
-      680
-    ],
+    "original": [1600, 680],
+    "size": [1600, 680],
     "bytes": 208290,
     "source": "https://www.sensacine.com/peliculas/pelicula-203878/fotos/"
   },
   {
     "filename": "manolo-mother-reunion.webp",
-    "original": [
-      1600,
-      680
-    ],
-    "size": [
-      1600,
-      680
-    ],
+    "original": [1600, 680],
+    "size": [1600, 680],
     "bytes": 190310,
     "source": "https://www.sensacine.com/peliculas/pelicula-203878/fotos/"
   },
   {
     "filename": "cemetery-gate-image.webp",
-    "original": [
-      920,
-      745
-    ],
-    "size": [
-      1394,
-      1128
-    ],
+    "original": [920, 745],
+    "size": [1394, 1128],
     "bytes": 695054,
     "source": "https://clipart-library.com/clipart/cemetery-cliparts-22.htm",
     "preparation": "Existing sourced gate image, background-extracted with built-in image tool; transparent derivative. Personal-use listing; see GATE-ASSET.md."

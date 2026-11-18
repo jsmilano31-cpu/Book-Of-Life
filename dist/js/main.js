@@ -1,3 +1,3 @@
-import {startExperience} from './controllers/experience-controller.js';
+import { startExperience } from './controllers/experience-controller.js';
 
 startExperience();

@@ -40,14 +40,14 @@ The ending also has a **Personalize project credits** form. These entries are st
 ```text
 dist/
   index.html
-  styles.css
   js/
     main.js       # Application entry point
     models/       # Story content, page numbering, journey state, and credits storage
     views/        # Book templates, DOM updates, GSAP timelines, and Canvas effects
     controllers/  # Journey flow, reader input and Turn.js, and audio playback
   css/
-    entrance-gate.css  # Scoped image-gate layers and responsive framing
+    site.css           # Layout, reader, credits, and responsive design
+    entrance-gate.css  # Image-gate layers and responsive framing
   assets/
     images/       # Optimized film-image candidates
     video/        # Original procedural atmospheric loop and poster
@@ -55,9 +55,10 @@ dist/
     vendor/       # GSAP, ScrollTrigger, jQuery, Turn.js and notices
     project-info.json
 tools/
-  check.mjs
-  qa.py
-  generate-atmosphere.py
+  build.mjs, check.mjs, serve.py
+  lint/            # Validation and formatting rules for authored code
+  qa/              # Browser suites, run through test.py
+  media/           # Atmospheric video generator
 ```
 
 ## Technology and dependency choices
@@ -69,7 +70,7 @@ tools/
 - Locally hosted Cormorant Garamond and Manrope.
 - No external runtime API calls, accounts, analytics, or backend database.
 
-The small MP4 is an original six-second loop of procedural fog and motes. Recreate it with `python tools/generate-atmosphere.py` after installing Pillow and imageio-ffmpeg if needed. Its use avoids introducing unrelated stock video or unlicensed movie footage.
+The small MP4 is an original six-second loop of procedural fog and motes. Recreate it with `python tools/media/generate-atmosphere.py` after installing Pillow and imageio-ffmpeg if needed. Its use avoids introducing unrelated stock video or unlicensed movie footage.
 
 ## Reliability and accessibility
 
@@ -95,9 +96,17 @@ The project is an interpretive illustrated guide, not an official film companion
 
 ## Validation
 
-`node tools/check.mjs` performs static checks. `python tools/qa.py` uses Playwright and an installed Chrome browser in isolated headless contexts. It checks the scroll scenes, real Turn.js initialization, navigation, audio controls, SVG path, candles, discovery dialog, explicit finale entry, editable academic credits, persistence, and replay at desktop, mobile, and reduced-motion settings.
+Install the development tools from this folder with Node.js 24, Python, and Chrome available.
 
-The browser checks simulate mobile behavior; they are not a claim of testing on physical Android hardware. The report and screenshots are written to ignored `qa-output/`.
+```powershell
+npm ci
+python -m pip install -r requirements-dev.txt
+npm run lint
+npm run build
+npm test
+```
+
+Lint checks authored JavaScript, HTML (including generated book pages), CSS, Python, and source formatting. The browser suites start a temporary local preview and cover scrolling, the gate, Turn.js, audio controls, book interactions, the ending, credits persistence, and dependency fallbacks. They use headless Chrome with desktop, mobile emulation, and reduced-motion settings. Reports and screenshots go to the temporary folder printed by the test runner.
 
 ## Hosting
 
