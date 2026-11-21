@@ -59,7 +59,7 @@ for (const chapter of chapters) {
   }
 }
 const manifest = JSON.parse(
-  await readFile(join(root, '.openai', 'hosting.json'), 'utf8'),
+  await readFile(join(root, 'hosting.json'), 'utf8'),
 );
 if (!manifest.project_id || manifest.static?.directory !== 'dist')
   failures.push('Invalid hosting manifest');

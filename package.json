@@ -14,7 +14,7 @@
     "lint:js": "eslint --config tools/lint/eslint.mjs \"dist/{model,view,control}/**/*.js\" \"tools/**/*.mjs\"",
     "lint:css": "biome lint --config-path=tools/lint/biome.json --error-on-warnings dist/view/styles dist/media/fonts/fonts.css",
     "lint:html": "node tools/lint/html.mjs",
-    "lint:format": "prettier --config tools/lint/prettier.json --check \"dist/index.html\" \"dist/view/styles/*.css\" \"dist/{model,view,control}/**/*.js\" \"tools/**/*.mjs\" \"tools/lint/*.json\" \"dist/model/project-info.json\" \".openai/hosting.json\" \"asset-manifest.json\" \"package.json\"",
+    "lint:format": "prettier --config tools/lint/prettier.json --check \"dist/index.html\" \"dist/view/styles/*.css\" \"dist/{model,view,control}/**/*.js\" \"tools/**/*.mjs\" \"tools/lint/*.json\" \"dist/model/project-info.json\" \"hosting.json\" \"asset-manifest.json\" \"package.json\"",
     "test": "node tools/test.mjs",
     "media:generate": "node tools/media/generate-atmosphere.mjs"
   },
